@@ -6,8 +6,11 @@
 //  Copyright (c) 2013 Noah Harris. All rights reserved.
 //
 
+#import <MapKit/MapKit.h>
 #import <UIKit/UIKit.h>
 
-@interface GossipQueenMapViewController : UIViewController
+@interface GossipQueenMapViewController : UIViewController <MKMapViewDelegate>
+
+@property (nonatomic, strong) IBOutlet MKMapView *mapView;
 
 @end
