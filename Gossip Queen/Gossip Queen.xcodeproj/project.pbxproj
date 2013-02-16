@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B90DB84F16CF920F008E0B61 /* GossipQueenInterestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90DB84E16CF920F008E0B61 /* GossipQueenInterestsViewController.m */; };
+		B90DB85216CF92D3008E0B61 /* GossipQueenFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90DB85116CF92D3008E0B61 /* GossipQueenFriendsViewController.m */; };
+		B90DB85516CF9334008E0B61 /* GossipQueenHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90DB85416CF9334008E0B61 /* GossipQueenHistoryViewController.m */; };
 		B94838F816CED0E600438882 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94838F716CED0E600438882 /* UIKit.framework */; };
 		B94838FA16CED0E600438882 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94838F916CED0E600438882 /* Foundation.framework */; };
 		B94838FC16CED0E600438882 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94838FB16CED0E600438882 /* CoreGraphics.framework */; };
@@ -25,12 +28,15 @@
 		B948392216CED0E600438882 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B948392116CED0E600438882 /* second@2x.png */; };
 		B9794F7F16CF2F63003BDD68 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9794F7E16CF2F63003BDD68 /* MapKit.framework */; };
 		B9DF59C416CF15C3006479BD /* GossipQueenMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DF59C316CF15C3006479BD /* GossipQueenMapViewController.m */; };
-		B9DF59C716CF16EA006479BD /* GossipQueenFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DF59C616CF16EA006479BD /* GossipQueenFriendsViewController.m */; };
-		B9DF59CA16CF173A006479BD /* GossipQueenInterestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DF59C916CF173A006479BD /* GossipQueenInterestsViewController.m */; };
-		B9DF59CD16CF179E006479BD /* GossipQueenHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DF59CC16CF179E006479BD /* GossipQueenHistoryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B90DB84D16CF920F008E0B61 /* GossipQueenInterestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GossipQueenInterestsViewController.h; path = ../GossipQueenInterestsViewController.h; sourceTree = "<group>"; };
+		B90DB84E16CF920F008E0B61 /* GossipQueenInterestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GossipQueenInterestsViewController.m; path = ../GossipQueenInterestsViewController.m; sourceTree = "<group>"; };
+		B90DB85016CF92D3008E0B61 /* GossipQueenFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GossipQueenFriendsViewController.h; path = ../GossipQueenFriendsViewController.h; sourceTree = "<group>"; };
+		B90DB85116CF92D3008E0B61 /* GossipQueenFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GossipQueenFriendsViewController.m; path = ../GossipQueenFriendsViewController.m; sourceTree = "<group>"; };
+		B90DB85316CF9334008E0B61 /* GossipQueenHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GossipQueenHistoryViewController.h; path = ../GossipQueenHistoryViewController.h; sourceTree = "<group>"; };
+		B90DB85416CF9334008E0B61 /* GossipQueenHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GossipQueenHistoryViewController.m; path = ../GossipQueenHistoryViewController.m; sourceTree = "<group>"; };
 		B94838F416CED0E600438882 /* Gossip Queen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gossip Queen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B94838F716CED0E600438882 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B94838F916CED0E600438882 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -55,12 +61,6 @@
 		B9794F7E16CF2F63003BDD68 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B9DF59C216CF15C3006479BD /* GossipQueenMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GossipQueenMapViewController.h; sourceTree = "<group>"; };
 		B9DF59C316CF15C3006479BD /* GossipQueenMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GossipQueenMapViewController.m; sourceTree = "<group>"; };
-		B9DF59C516CF16EA006479BD /* GossipQueenFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GossipQueenFriendsViewController.h; sourceTree = "<group>"; };
-		B9DF59C616CF16EA006479BD /* GossipQueenFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GossipQueenFriendsViewController.m; sourceTree = "<group>"; };
-		B9DF59C816CF173A006479BD /* GossipQueenInterestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GossipQueenInterestsViewController.h; sourceTree = "<group>"; };
-		B9DF59C916CF173A006479BD /* GossipQueenInterestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GossipQueenInterestsViewController.m; sourceTree = "<group>"; };
-		B9DF59CB16CF179E006479BD /* GossipQueenHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GossipQueenHistoryViewController.h; sourceTree = "<group>"; };
-		B9DF59CC16CF179E006479BD /* GossipQueenHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GossipQueenHistoryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,16 +109,16 @@
 		B94838FD16CED0E600438882 /* Gossip Queen */ = {
 			isa = PBXGroup;
 			children = (
-				B948390616CED0E600438882 /* GossipQueenAppDelegate.h */,
-				B948390716CED0E600438882 /* GossipQueenAppDelegate.m */,
 				B948390F16CED0E600438882 /* MainStoryboard_iPhone.storyboard */,
 				B948391216CED0E600438882 /* MainStoryboard_iPad.storyboard */,
-				B9DF59CB16CF179E006479BD /* GossipQueenHistoryViewController.h */,
-				B9DF59CC16CF179E006479BD /* GossipQueenHistoryViewController.m */,
-				B9DF59C816CF173A006479BD /* GossipQueenInterestsViewController.h */,
-				B9DF59C916CF173A006479BD /* GossipQueenInterestsViewController.m */,
-				B9DF59C516CF16EA006479BD /* GossipQueenFriendsViewController.h */,
-				B9DF59C616CF16EA006479BD /* GossipQueenFriendsViewController.m */,
+				B90DB85316CF9334008E0B61 /* GossipQueenHistoryViewController.h */,
+				B90DB85416CF9334008E0B61 /* GossipQueenHistoryViewController.m */,
+				B90DB85016CF92D3008E0B61 /* GossipQueenFriendsViewController.h */,
+				B90DB85116CF92D3008E0B61 /* GossipQueenFriendsViewController.m */,
+				B90DB84D16CF920F008E0B61 /* GossipQueenInterestsViewController.h */,
+				B90DB84E16CF920F008E0B61 /* GossipQueenInterestsViewController.m */,
+				B948390616CED0E600438882 /* GossipQueenAppDelegate.h */,
+				B948390716CED0E600438882 /* GossipQueenAppDelegate.m */,
 				B948391516CED0E600438882 /* GossipQueenMainViewController.h */,
 				B948391616CED0E600438882 /* GossipQueenMainViewController.m */,
 				B9DF59C216CF15C3006479BD /* GossipQueenMapViewController.h */,
@@ -222,9 +222,9 @@
 				B948390816CED0E600438882 /* GossipQueenAppDelegate.m in Sources */,
 				B948391716CED0E600438882 /* GossipQueenMainViewController.m in Sources */,
 				B9DF59C416CF15C3006479BD /* GossipQueenMapViewController.m in Sources */,
-				B9DF59C716CF16EA006479BD /* GossipQueenFriendsViewController.m in Sources */,
-				B9DF59CA16CF173A006479BD /* GossipQueenInterestsViewController.m in Sources */,
-				B9DF59CD16CF179E006479BD /* GossipQueenHistoryViewController.m in Sources */,
+				B90DB84F16CF920F008E0B61 /* GossipQueenInterestsViewController.m in Sources */,
+				B90DB85216CF92D3008E0B61 /* GossipQueenFriendsViewController.m in Sources */,
+				B90DB85516CF9334008E0B61 /* GossipQueenHistoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
