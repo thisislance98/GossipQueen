@@ -1,5 +1,5 @@
 //
-//  GossipQueenFirstViewController.h
+//  GossipQueenHistoryViewController.h
 //  Gossip Queen
 //
 //  Created by Noah Harris on 2/15/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GossipQueenFirstViewController : UIViewController
+@interface GossipQueenHistoryViewController : UIViewController
 
 @end
