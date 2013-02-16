@@ -14,6 +14,8 @@
 
 @implementation GossipQueenMapViewController
 
+@synthesize mapView;  //this is assigned a value in the storyboard using an outlet, this is made a delegate through an outlet in the storyboard as well.
+
 
 - (void)viewDidLoad
 {

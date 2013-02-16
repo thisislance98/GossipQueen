@@ -9,7 +9,7 @@
 #import <MapKit/MapKit.h>
 #import <UIKit/UIKit.h>
 
-@interface GossipQueenMapViewController : UIViewController <MKMapViewDelegate>
+@interface GossipQueenMapViewController : UIViewController <MKMapViewDelegate> 
 
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
 
