@@ -10,4 +10,7 @@
 
 @interface GossipQueenInterestsViewController : UITableViewController
 
+//cells
+@property (weak, nonatomic) IBOutlet UITableViewCell *fashionCell;
+
 @end
