@@ -388,9 +388,6 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Interests" id="XYB-rj-iNA"/>
-                    <connections>
-                        <outlet property="fashionCell" destination="ZFc-PK-eIb" id="fJ9-Xv-BTi"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bm9-gm-UY3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -466,9 +463,6 @@
         </class>
         <class className="GossipQueenInterestsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenInterestsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="fashionCell" candidateClass="UITableViewCell"/>
-            </relationships>
         </class>
         <class className="GossipQueenMainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenMainViewController.h"/>
