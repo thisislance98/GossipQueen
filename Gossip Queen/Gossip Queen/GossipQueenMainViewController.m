@@ -34,6 +34,12 @@
     NSLog(@"sendMessage");
     self.sendField.text = @"Send";
     
+    
+    // Integrating Parse code into our app w00t!
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    [testObject setObject:@"bar" forKey:@"foo"];
+    [testObject save];
+    
 }
 
 - (IBAction)insertLink:(id)sender {
