@@ -44,6 +44,8 @@
 
 #pragma mark - Table view data source
 
+// THESE METHODS ARE MUST BE REMOVED BEFORE THE STATIC CELLS WILL SHOW UP
+/*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 #warning Potentially incomplete method implementation.
@@ -67,6 +69,8 @@
     
     return cell;
 }
+ 
+ */
 
 /*
 // Override to support conditional editing of the table view.
