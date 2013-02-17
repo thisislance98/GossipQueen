@@ -10,4 +10,13 @@
 
 @interface GossipQueenMainViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextView *sendField;
+@property (weak, nonatomic) IBOutlet UITextView *receiveField;
+
+- (IBAction)sendMessage:(id)sender;
+- (IBAction)insertLink:(id)sender;
+- (IBAction)like:(id)sender;
+- (IBAction)dislike:(id)sender;
+
+
 @end
