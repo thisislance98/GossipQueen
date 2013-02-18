@@ -10,6 +10,5 @@
 
 @interface GossipQueenHistoryViewController : UITableViewController
 
-@property (nonatomic, copy) NSMutableArray *messageArray;
-
 @end
+

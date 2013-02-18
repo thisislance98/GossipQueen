@@ -16,7 +16,6 @@
 @implementation GossipQueenHistoryViewController {
 }
 
-@synthesize messageArray;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -38,12 +37,6 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     NSLog(@"History");
-    Message *test = [[Message alloc] init];
-    test.text = @"This is a sample message yo";
-    test.dateSent = [NSDate date];
-    [self.messageArray insertObject:test atIndex:1];
-    
-    [[NSUserDefaults standardUserDefaults] setObject:messageArray forKey:@"messageArray"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,28 +56,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HistoryCell"];
-   
-    
-    
-    NSMutableArray *history = [[NSUserDefaults standardUserDefaults] objectForKey:@"messageArray"];
-    Message *sample = [self.messageArray objectAtIndex:1];
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"mm/dd/yy"];
-    
-    NSString *stringFromDate = [formatter stringFromDate:sample.dateSent];
-  
     
     
     UILabel *header = (UILabel *)[cell viewWithTag:1000];
     UILabel *date = (UILabel *)[cell viewWithTag:2000];
     
-    NSLog(sample.text);
-    NSLog(stringFromDate);
-    
     if (indexPath.row == 0) {
-        header.text = sample.text;
-        date.text = stringFromDate;
+        header.text = @"Sample message thing";
+        date.text = @"12/12/12";
     }
     
     return cell;
@@ -138,13 +117,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+     //[self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 @end

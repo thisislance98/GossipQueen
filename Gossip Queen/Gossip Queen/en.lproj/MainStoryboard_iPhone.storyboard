@@ -467,7 +467,22 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7zP-ar-gjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="325" y="1087"/>
+            <point key="canvasLocation" x="109" y="1291"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Hz7-dF-pRu">
+            <objects>
+                <viewController id="fpZ-I5-5EP" customClass="DetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mZc-cM-crU">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VJn-fG-bOc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1pO-25-OXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1233" y="1279"/>
         </scene>
         <!--Gossip Queen Friends View Controller - Friends-->
         <scene sceneID="pIg-JK-vWg">
@@ -497,41 +512,27 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cF-ra-t9H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="979" y="1086"/>
+            <point key="canvasLocation" x="439" y="514"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Rjs-8J-2mT">
+            <objects>
+                <navigationController id="4aK-5R-ra5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hoq-wM-JQT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fpZ-I5-5EP" kind="relationship" relationship="rootViewController" id="jKw-4C-zZl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="otV-c1-Cbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="723" y="1279"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="GossipQueenFriendsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenFriendsViewController.h"/>
-        </class>
-        <class className="GossipQueenHistoryViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenHistoryViewController.h"/>
-        </class>
-        <class className="GossipQueenInterestsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenInterestsViewController.h"/>
-        </class>
-        <class className="GossipQueenMainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenMainViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="dislike:"/>
-                <relationship kind="action" name="insertLink:"/>
-                <relationship kind="action" name="like:"/>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="action" name="sendMessage:"/>
-                <relationship kind="outlet" name="receiveField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="sendField" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="GossipQueenMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenMapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
