@@ -41,6 +41,7 @@
 		B9ACB65516D0E99B003F5291 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9ACB65416D0E99B003F5291 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B9ACB65716D0E9A0003F5291 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9ACB65616D0E9A0003F5291 /* StoreKit.framework */; };
 		B9ACB65916D0E9A9003F5291 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9ACB65816D0E9A9003F5291 /* SystemConfiguration.framework */; };
+		B9B8606E16D2E5D500B8A95F /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B8606D16D2E5D500B8A95F /* Message.m */; };
 		B9DF59C416CF15C3006479BD /* GossipQueenMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DF59C316CF15C3006479BD /* GossipQueenMapViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,8 @@
 		B9ACB65416D0E99B003F5291 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		B9ACB65616D0E9A0003F5291 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		B9ACB65816D0E9A9003F5291 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B9B8606C16D2E5D500B8A95F /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		B9B8606D16D2E5D500B8A95F /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		B9DF59C216CF15C3006479BD /* GossipQueenMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GossipQueenMapViewController.h; sourceTree = "<group>"; };
 		B9DF59C316CF15C3006479BD /* GossipQueenMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GossipQueenMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +172,8 @@
 				B948391216CED0E600438882 /* MainStoryboard_iPad.storyboard */,
 				B90DB85316CF9334008E0B61 /* GossipQueenHistoryViewController.h */,
 				B90DB85416CF9334008E0B61 /* GossipQueenHistoryViewController.m */,
+				B9B8606C16D2E5D500B8A95F /* Message.h */,
+				B9B8606D16D2E5D500B8A95F /* Message.m */,
 				B90DB85016CF92D3008E0B61 /* GossipQueenFriendsViewController.h */,
 				B90DB85116CF92D3008E0B61 /* GossipQueenFriendsViewController.m */,
 				B90DB84D16CF920F008E0B61 /* GossipQueenInterestsViewController.h */,
@@ -281,6 +286,7 @@
 				B90DB84F16CF920F008E0B61 /* GossipQueenInterestsViewController.m in Sources */,
 				B90DB85216CF92D3008E0B61 /* GossipQueenFriendsViewController.m in Sources */,
 				B90DB85516CF9334008E0B61 /* GossipQueenHistoryViewController.m in Sources */,
+				B9B8606E16D2E5D500B8A95F /* Message.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

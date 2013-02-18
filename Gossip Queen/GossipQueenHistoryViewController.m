@@ -7,12 +7,16 @@
 //
 
 #import "GossipQueenHistoryViewController.h"
+#import "Message.h"
 
 @interface GossipQueenHistoryViewController ()
 
 @end
 
-@implementation GossipQueenHistoryViewController
+@implementation GossipQueenHistoryViewController {
+}
+
+@synthesize messageArray;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,6 +38,12 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     NSLog(@"History");
+    Message *test = [[Message alloc] init];
+    test.text = @"This is a sample message yo";
+    test.dateSent = [NSDate date];
+    [self.messageArray insertObject:test atIndex:1];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:messageArray forKey:@"messageArray"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,13 +63,28 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HistoryCell"];
+   
+    
+    
+    NSMutableArray *history = [[NSUserDefaults standardUserDefaults] objectForKey:@"messageArray"];
+    Message *sample = [self.messageArray objectAtIndex:1];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"mm/dd/yy"];
+    
+    NSString *stringFromDate = [formatter stringFromDate:sample.dateSent];
+  
+    
     
     UILabel *header = (UILabel *)[cell viewWithTag:1000];
     UILabel *date = (UILabel *)[cell viewWithTag:2000];
     
+    NSLog(sample.text);
+    NSLog(stringFromDate);
+    
     if (indexPath.row == 0) {
-        header.text = @"Walking my dawgs, yall better watch out";
-        date.text = @"2/18/13";
+        header.text = sample.text;
+        date.text = stringFromDate;
     }
     
     return cell;
