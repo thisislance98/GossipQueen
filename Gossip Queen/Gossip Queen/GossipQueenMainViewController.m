@@ -54,6 +54,10 @@
     NSLog(@"dislike");
 }
 
+- (IBAction)save:(id)sender {
+    NSLog(@"save");
+}
+
 
 
 @end
