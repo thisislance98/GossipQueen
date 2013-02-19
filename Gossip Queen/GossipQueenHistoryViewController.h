@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Message.h"
 
-@interface GossipQueenHistoryViewController : UITableViewController
+@interface GossipQueenHistoryViewController : UITableViewController {
+    Message *sampleMessage;
+    NSMutableArray *messageArray;
+}
 
 @end
 

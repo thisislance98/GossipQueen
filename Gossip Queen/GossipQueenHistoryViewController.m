@@ -16,7 +16,7 @@
 @implementation GossipQueenHistoryViewController {
 }
 
-
+//##############################################################
 //data access methods
 - (NSString *)documentsDirectory
 {
@@ -44,6 +44,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    sampleMessage = [[Message alloc] init];
+    sampleMessage.text = @"This is a sample Message";
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -67,7 +70,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -79,9 +82,13 @@
     UILabel *date = (UILabel *)[cell viewWithTag:2000];
     
     if (indexPath.row == 0) {
-        header.text = @"Sample message thing";
+        header.text = sampleMessage.text;
         date.text = @"12/12/12";
+    } else if (indexPath.row == 1) {
+        header.text = @"Another message";
+        date.text = @"66/66/66";
     }
+    
     
     return cell;
         
