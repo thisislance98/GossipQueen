@@ -42,7 +42,6 @@
 		B9ACB65716D0E9A0003F5291 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9ACB65616D0E9A0003F5291 /* StoreKit.framework */; };
 		B9ACB65916D0E9A9003F5291 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9ACB65816D0E9A9003F5291 /* SystemConfiguration.framework */; };
 		B9B8606E16D2E5D500B8A95F /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B8606D16D2E5D500B8A95F /* Message.m */; };
-		B9B8607116D2F23D00B8A95F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B8607016D2F23D00B8A95F /* DetailViewController.m */; };
 		B9DF59C416CF15C3006479BD /* GossipQueenMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DF59C316CF15C3006479BD /* GossipQueenMapViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -91,8 +90,6 @@
 		B9ACB65816D0E9A9003F5291 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B9B8606C16D2E5D500B8A95F /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
 		B9B8606D16D2E5D500B8A95F /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
-		B9B8606F16D2F23D00B8A95F /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		B9B8607016D2F23D00B8A95F /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		B9DF59C216CF15C3006479BD /* GossipQueenMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GossipQueenMapViewController.h; sourceTree = "<group>"; };
 		B9DF59C316CF15C3006479BD /* GossipQueenMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GossipQueenMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,8 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				B948390F16CED0E600438882 /* MainStoryboard_iPhone.storyboard */,
-				B9B8606F16D2F23D00B8A95F /* DetailViewController.h */,
-				B9B8607016D2F23D00B8A95F /* DetailViewController.m */,
 				B948391216CED0E600438882 /* MainStoryboard_iPad.storyboard */,
 				B90DB85316CF9334008E0B61 /* GossipQueenHistoryViewController.h */,
 				B90DB85416CF9334008E0B61 /* GossipQueenHistoryViewController.m */,
@@ -292,7 +287,6 @@
 				B90DB85216CF92D3008E0B61 /* GossipQueenFriendsViewController.m in Sources */,
 				B90DB85516CF9334008E0B61 /* GossipQueenHistoryViewController.m in Sources */,
 				B9B8606E16D2E5D500B8A95F /* Message.m in Sources */,
-				B9B8607116D2F23D00B8A95F /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

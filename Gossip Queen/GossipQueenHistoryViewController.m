@@ -17,6 +17,21 @@
 }
 
 
+//data access methods
+- (NSString *)documentsDirectory
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return documentsDirectory;
+}
+
+- (NSString *)dataFilePath
+{
+    return [[self documentsDirectory] stringByAppendingPathComponent:@"messages.plist"];
+}
+
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -37,6 +52,8 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     NSLog(@"History");
+    NSLog(@"Documents folder is %@", [self documentsDirectory]);
+    NSLog(@"Data file path is %@", [self dataFilePath]);
 }
 
 - (void)didReceiveMemoryWarning

@@ -469,21 +469,6 @@
             </objects>
             <point key="canvasLocation" x="109" y="1291"/>
         </scene>
-        <!--Detail View Controller-->
-        <scene sceneID="Hz7-dF-pRu">
-            <objects>
-                <viewController id="fpZ-I5-5EP" customClass="DetailViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mZc-cM-crU">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="VJn-fG-bOc"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1pO-25-OXk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1233" y="1279"/>
-        </scene>
         <!--Gossip Queen Friends View Controller - Friends-->
         <scene sceneID="pIg-JK-vWg">
             <objects>
@@ -513,24 +498,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cF-ra-t9H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="439" y="514"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Rjs-8J-2mT">
-            <objects>
-                <navigationController id="4aK-5R-ra5" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hoq-wM-JQT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="fpZ-I5-5EP" kind="relationship" relationship="rootViewController" id="jKw-4C-zZl"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="otV-c1-Cbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="723" y="1279"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
