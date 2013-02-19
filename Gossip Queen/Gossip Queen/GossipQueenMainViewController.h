@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface GossipQueenMainViewController : UIViewController
+@interface GossipQueenMainViewController : UIViewController {
+    CLLocationManager *locationManager;
+}
 
 @property (weak, nonatomic) IBOutlet UITextView *sendField;
 @property (weak, nonatomic) IBOutlet UITextView *receiveField;

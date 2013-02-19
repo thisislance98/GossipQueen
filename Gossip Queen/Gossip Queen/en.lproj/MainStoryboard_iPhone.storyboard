@@ -70,6 +70,9 @@
                                 </connections>
                             </button>
                             <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gO6-gw-LKw">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="wwp-c2-RcB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Send">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -140,28 +143,27 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5Mc-mz-eqp" firstAttribute="centerX" secondItem="JZU-Pn-CkW" secondAttribute="centerX" type="default" id="0LU-vx-ZgD"/>
-                            <constraint firstAttribute="bottom" secondItem="VCt-Ic-noY" secondAttribute="bottom" constant="14" id="2km-2s-bAi"/>
-                            <constraint firstItem="gO6-gw-LKw" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DyQ-WB-hEa"/>
+                            <constraint firstItem="gO6-gw-LKw" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="34" id="Bl2-io-omo"/>
                             <constraint firstItem="SdW-4Z-k3c" firstAttribute="top" secondItem="16" secondAttribute="top" constant="20" symbolic="YES" type="default" id="FLh-GO-siX"/>
                             <constraint firstItem="VCt-Ic-noY" firstAttribute="centerY" secondItem="UDq-Nn-AbX" secondAttribute="centerY" type="default" id="KjD-lv-l5G"/>
                             <constraint firstItem="dC9-zc-PHz" firstAttribute="baseline" secondItem="gO6-gw-LKw" secondAttribute="baseline" type="default" id="OXZ-Pu-ARs"/>
                             <constraint firstItem="JZU-Pn-CkW" firstAttribute="centerY" secondItem="5Mc-mz-eqp" secondAttribute="centerY" type="default" id="Olc-Pn-XPo"/>
-                            <constraint firstItem="gO6-gw-LKw" firstAttribute="centerX" secondItem="0NE-3M-ueM" secondAttribute="centerX" type="default" id="QBM-OQ-ebD"/>
                             <constraint firstAttribute="trailing" secondItem="VCt-Ic-noY" secondAttribute="trailing" constant="25" id="Rti-f3-Eg0"/>
                             <constraint firstItem="Qxq-JN-aOK" firstAttribute="centerX" secondItem="SdW-4Z-k3c" secondAttribute="centerX" type="default" id="Uzb-NH-f8q"/>
+                            <constraint firstItem="0NE-3M-ueM" firstAttribute="baseline" secondItem="UDq-Nn-AbX" secondAttribute="baseline" type="default" id="V0R-fj-CGU"/>
                             <constraint firstAttribute="trailing" secondItem="SdW-4Z-k3c" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ZP9-pF-Syf"/>
                             <constraint firstAttribute="bottom" secondItem="UDq-Nn-AbX" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="c75-mR-CcJ"/>
                             <constraint firstItem="UDq-Nn-AbX" firstAttribute="centerX" secondItem="Qxq-JN-aOK" secondAttribute="centerX" type="default" id="cPq-wE-rmL"/>
-                            <constraint firstAttribute="trailing" secondItem="dC9-zc-PHz" secondAttribute="trailing" constant="34" id="fnJ-MO-w0Y"/>
                             <constraint firstItem="VCt-Ic-noY" firstAttribute="top" secondItem="0NE-3M-ueM" secondAttribute="top" type="default" id="gSt-VY-ljr"/>
                             <constraint firstItem="SdW-4Z-k3c" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="j5K-3Q-Nog"/>
                             <constraint firstAttribute="bottom" secondItem="JZU-Pn-CkW" secondAttribute="bottom" constant="67" id="l50-nd-1fT"/>
-                            <constraint firstItem="VCt-Ic-noY" firstAttribute="bottom" secondItem="0NE-3M-ueM" secondAttribute="bottom" type="default" id="mZ8-dn-cpk"/>
+                            <constraint firstItem="gO6-gw-LKw" firstAttribute="leading" secondItem="Qxq-JN-aOK" secondAttribute="leading" type="default" id="lpd-te-qMd"/>
                             <constraint firstAttribute="trailing" secondItem="JZU-Pn-CkW" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="nKD-2l-W85"/>
                             <constraint firstItem="dC9-zc-PHz" firstAttribute="trailing" secondItem="Qxq-JN-aOK" secondAttribute="trailing" type="default" id="pLY-FA-DQp"/>
                             <constraint firstItem="0NE-3M-ueM" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rio-9B-3GY"/>
                             <constraint firstItem="gO6-gw-LKw" firstAttribute="top" secondItem="SdW-4Z-k3c" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="uuu-i2-vx8"/>
                             <constraint firstItem="Qxq-JN-aOK" firstAttribute="top" secondItem="16" secondAttribute="top" constant="38" id="xYS-re-ZvP"/>
+                            <constraint firstAttribute="bottom" secondItem="0NE-3M-ueM" secondAttribute="bottom" constant="14" id="ygR-68-pt3"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" id="7"/>
@@ -423,7 +425,7 @@
             <objects>
                 <tableViewController id="eYI-8k-8wc" customClass="GossipQueenHistoryViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bGf-27-vVY">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -471,7 +473,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7zP-ar-gjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1969" y="687"/>
+            <point key="canvasLocation" x="1933" y="569"/>
         </scene>
         <!--Gossip Queen Friends View Controller - Friends-->
         <scene sceneID="pIg-JK-vWg">
@@ -561,6 +563,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="5BG-lR-Bzh"/>
+        <segue reference="NYJ-Mp-kvH"/>
     </inferredMetricsTieBreakers>
 </document>
