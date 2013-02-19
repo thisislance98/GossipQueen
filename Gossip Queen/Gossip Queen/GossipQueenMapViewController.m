@@ -22,6 +22,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     NSLog(@"Map");
+    
+    CLLocation *location = mapView.userLocation.location;
+    
 }
 
 - (void)didReceiveMemoryWarning
