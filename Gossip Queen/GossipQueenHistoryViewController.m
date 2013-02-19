@@ -24,11 +24,18 @@
     if ((self = [super initWithCoder:aDecoder])) {
         
         messageArray = [[NSMutableArray alloc] init];
+        [self loadMessages];
         
-        sampleMessage = [[Message alloc] init];
-        sampleMessage.text = @"This is a sample Message";
         
-        [messageArray addObject:sampleMessage];
+        
+        
+        //Test code
+        //sampleMessage = [[Message alloc] init];
+        //sampleMessage.text = @"This is a sample Message";
+        
+        //[messageArray addObject:sampleMessage];
+        
+        [self saveMessages];
 
         NSLog(@"Documents folder is %@", [self documentsDirectory]);
         NSLog(@"Data file path is %@", [self dataFilePath]);
@@ -40,8 +47,6 @@
 
 
 
-
-//##############################################################
 //data access methods
 - (NSString *)documentsDirectory
 {
@@ -55,9 +60,6 @@
     return [[self documentsDirectory] stringByAppendingPathComponent:@"messages.plist"];
 }
 
-
-
-
 -(void)saveMessages
 {
     NSMutableData *data = [[NSMutableData alloc] init];
@@ -70,12 +72,21 @@
     [data writeToFile:[self dataFilePath] atomically:YES];
 }
 
-/*
--(NSMutableArray *)loadMessages
+-(void)loadMessages
 {
-    //TODO
+    NSString *path = [self dataFilePath];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path])
+    {
+        NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];
+        messageArray = [unarchiver decodeObjectForKey:@"messageArray"];
+        [unarchiver finishDecoding];
+    }
 }
- */
+ 
+
+
+
 
 
 
