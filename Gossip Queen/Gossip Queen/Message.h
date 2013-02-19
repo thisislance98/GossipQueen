@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Message : NSObject
+@interface Message : NSObject <NSCoding>
 
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, copy) NSDate *dateSent;

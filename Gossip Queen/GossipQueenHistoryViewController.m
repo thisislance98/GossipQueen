@@ -16,6 +16,31 @@
 @implementation GossipQueenHistoryViewController {
 }
 
+
+
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder])) {
+        
+        messageArray = [[NSMutableArray alloc] init];
+        
+        sampleMessage = [[Message alloc] init];
+        sampleMessage.text = @"This is a sample Message";
+        
+        [messageArray addObject:sampleMessage];
+
+        NSLog(@"Documents folder is %@", [self documentsDirectory]);
+        NSLog(@"Data file path is %@", [self dataFilePath]);
+
+    }
+    return self;
+}
+
+
+
+
+
 //##############################################################
 //data access methods
 - (NSString *)documentsDirectory
@@ -32,29 +57,32 @@
 
 
 
-- (id)initWithStyle:(UITableViewStyle)style
+
+-(void)saveMessages
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    NSMutableData *data = [[NSMutableData alloc] init];
+    //initialize archiver with the NSMutableData
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    //encode the messages array into the data object
+    [archiver encodeObject:messageArray forKey:@"messageArray"];
+    [archiver finishEncoding];
+    //writes to file by calling the filepath function
+    [data writeToFile:[self dataFilePath] atomically:YES];
 }
+
+/*
+-(NSMutableArray *)loadMessages
+{
+    //TODO
+}
+ */
+
+
+
 
 - (void)viewDidLoad
 {
-    
-    //DO ALL THE INIT STUFF HERE
-    //######################################################
-    //######################################################
     [super viewDidLoad];
-    
-    messageArray = [[NSMutableArray alloc] init];
-    
-    sampleMessage = [[Message alloc] init];
-    sampleMessage.text = @"This is a sample Message";
-    
-    [messageArray addObject:sampleMessage];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -63,18 +91,16 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     NSLog(@"History");
-    NSLog(@"Documents folder is %@", [self documentsDirectory]);
-    NSLog(@"Data file path is %@", [self dataFilePath]);
 }
 
-//########################################################
-//########################################################
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 #pragma mark - Table view data source
