@@ -43,10 +43,18 @@
 
 - (void)viewDidLoad
 {
+    
+    //DO ALL THE INIT STUFF HERE
+    //######################################################
+    //######################################################
     [super viewDidLoad];
+    
+    messageArray = [[NSMutableArray alloc] init];
     
     sampleMessage = [[Message alloc] init];
     sampleMessage.text = @"This is a sample Message";
+    
+    [messageArray addObject:sampleMessage];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -58,6 +66,9 @@
     NSLog(@"Documents folder is %@", [self documentsDirectory]);
     NSLog(@"Data file path is %@", [self dataFilePath]);
 }
+
+//########################################################
+//########################################################
 
 - (void)didReceiveMemoryWarning
 {
@@ -81,8 +92,10 @@
     UILabel *header = (UILabel *)[cell viewWithTag:1000];
     UILabel *date = (UILabel *)[cell viewWithTag:2000];
     
+    Message *test = [messageArray objectAtIndex:0];
+    
     if (indexPath.row == 0) {
-        header.text = sampleMessage.text;
+        header.text = test.text;
         date.text = @"12/12/12";
     } else if (indexPath.row == 1) {
         header.text = @"Another message";
