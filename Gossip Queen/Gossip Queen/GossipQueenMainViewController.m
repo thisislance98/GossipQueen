@@ -44,14 +44,15 @@
     self.sendField.text = @"";
     
     PFObject *message = [PFObject objectWithClassName:@"Message"];  //USING class name "Message"
+    
     [message setObject:text forKey:@"text"];
+    [message setObject:[NSNumber numberWithFloat:latitude] forKey:@"latitude"];
+    [message setObject:[NSNumber numberWithFloat:longitude] forKey:@"longitude"];
     
+    [message saveInBackground];
     
+    [self.sendField resignFirstResponder]; //release the keyboard
     
-    // Integrating Parse code into our app w00t!
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    [testObject setObject:@"bar" forKey:@"foo"];
-    [testObject save];
     
 }
 
