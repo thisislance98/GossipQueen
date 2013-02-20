@@ -43,7 +43,7 @@
     NSString *text = self.sendField.text;
     self.sendField.text = @"";
     
-    PFObject *message = [PFObject objectWithClassName:@"Message"];  //USING class name "Message"
+    PFObject *message = [PFObject objectWithClassName:@"Message"];  //Using class name "Message"
     
     [message setObject:text forKey:@"text"];
     [message setObject:[NSNumber numberWithFloat:latitude] forKey:@"latitude"];
@@ -78,11 +78,8 @@
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {
-    latitude = newLocation.coordinate.latitude;
+    latitude = newLocation.coordinate.latitude;     //assign these for use by the send function
     longitude = newLocation.coordinate.longitude;
-    NSLog(@"New latitude: %f", latitude);
-    NSLog(@"New longitude: %f", longitude);
-        //TODO
 }
 
 
