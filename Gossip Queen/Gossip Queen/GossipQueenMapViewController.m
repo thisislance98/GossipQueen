@@ -32,11 +32,11 @@
     [locationManager startUpdatingLocation];
     
     
-    CLLocationDegrees lat1 =34.0522;
-    CLLocationDegrees long1 =118.2428;
+    CLLocationDegrees lat1 = 34.0522;
+    CLLocationDegrees long1 = -118.2428;
     
     CLLocationDegrees lat2 = 40.7142;
-    CLLocationDegrees long2 = 74.0064;
+    CLLocationDegrees long2 = -74.0064;
 
     
     
@@ -56,11 +56,13 @@
     
     line = [MKPolyline polylineWithPoints:pointArr count:2];
     
-    MKMapRect routeRect = MKMapRectMake(southWestPoint.x, southWestPoint.y, northEastPoint.x - southWestPoint.x, northEastPoint.y - southWestPoint.y);
-    
     free(pointArr); //free the array
     
     [self.mapView addOverlay:line];
+    [self.mapView setCenterCoordinate:coord1];
+    
+    NSLog(@"%f",self.mapView.region.span.latitudeDelta);
+    NSLog(@"%f",self.mapView.region.span.longitudeDelta);
     
     
      
@@ -107,15 +109,19 @@
 
 #pragma mark - location manager delegate
 
-/*
+
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {
-    lat1 = newLocation.coordinate.latitude;   
-    long1 = newLocation.coordinate.longitude;
+    latitude = newLocation.coordinate.latitude;
+    longitude = newLocation.coordinate.longitude;
+    NSLog(@"Latitude delta: %f",self.mapView.region.span.latitudeDelta);
+    NSLog(@"Longitude delta %f",self.mapView.region.span.longitudeDelta);
+
+   
 }
- */
+
 
 
 @end

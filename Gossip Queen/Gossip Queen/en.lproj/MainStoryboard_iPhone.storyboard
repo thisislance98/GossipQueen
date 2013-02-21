@@ -206,7 +206,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ht-yb-wQ8">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" translatesAutoresizingMaskIntoConstraints="NO" id="0ht-yb-wQ8">
                                 <connections>
                                     <outlet property="delegate" destination="ItT-mR-OM2" id="GPH-XJ-Yfa"/>
                                 </connections>
@@ -221,7 +221,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lvc-pi-63R">
-                        <barButtonItem key="leftBarButtonItem" title="Message Lookup" id="hzP-cd-D9m">
+                        <barButtonItem key="leftBarButtonItem" title="Choose Message" id="hzP-cd-D9m">
                             <connections>
                                 <segue destination="eYI-8k-8wc" kind="push" id="5BG-lR-Bzh"/>
                             </connections>
@@ -420,12 +420,12 @@
             </objects>
             <point key="canvasLocation" x="917" y="809"/>
         </scene>
-        <!--Gossip Queen History View Controller - History-->
+        <!--Gossip Queen History View Controller - Choose a Message-->
         <scene sceneID="Tq9-ic-Nyl">
             <objects>
                 <tableViewController id="eYI-8k-8wc" customClass="GossipQueenHistoryViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bGf-27-vVY">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -469,7 +469,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="History" id="4XT-sa-ccr"/>
-                    <navigationItem key="navigationItem" id="h6K-fR-MXd"/>
+                    <navigationItem key="navigationItem" title="Choose a Message" id="h6K-fR-MXd">
+                        <barButtonItem key="backBarButtonItem" title="Done" id="BWo-2f-NtO"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7zP-ar-gjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -563,6 +565,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="NYJ-Mp-kvH"/>
+        <segue reference="5BG-lR-Bzh"/>
     </inferredMetricsTieBreakers>
 </document>

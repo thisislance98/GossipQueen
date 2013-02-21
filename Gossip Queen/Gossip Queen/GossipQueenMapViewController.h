@@ -13,10 +13,9 @@
 @interface GossipQueenMapViewController : UIViewController <MKMapViewDelegate> {
     
     CLLocationManager *locationManager;
-    float lat1;
-    float lat2;
-    float long1;
-    float long2;
+    double latitude;
+    double longitude;
+  
     MKPolyline *line;
     MKPolylineView *routeLineView;
 }
