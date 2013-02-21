@@ -81,7 +81,17 @@
 }
 
 
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event //this is buggy, but its sort of how to do it
+{
+    /*
+    if (self.mapView.region.span.longitudeDelta < 4) {
+        [self.mapView removeOverlay:line];
+    }
+     */
+}
 
+
+#pragma mark - MapView delegate
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id )overlay
 {

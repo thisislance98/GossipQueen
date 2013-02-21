@@ -9,6 +9,7 @@
 #import <MapKit/MapKit.h>
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface GossipQueenMapViewController : UIViewController <MKMapViewDelegate> {
     
