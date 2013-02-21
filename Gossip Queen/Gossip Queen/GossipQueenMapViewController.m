@@ -31,23 +31,40 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
     [locationManager startUpdatingLocation];
     
-    lat2 = 40.7142;
-    long2 = 74.0064;
     
-    lat1 =48.1364;
-    long1 =122.5825;
+    CLLocationDegrees lat1 =34.0522;
+    CLLocationDegrees long1 =118.2428;
     
-    /*
+    CLLocationDegrees lat2 = 40.7142;
+    CLLocationDegrees long2 = 74.0064;
+
+    
+    
     CLLocationCoordinate2D coord1 = CLLocationCoordinate2DMake(lat1, long1);
     CLLocationCoordinate2D coord2 = CLLocationCoordinate2DMake(lat2, long2);
     
     MKMapPoint point1 = MKMapPointForCoordinate(coord1);
     MKMapPoint point2 = MKMapPointForCoordinate(coord2);
     
+    MKMapPoint northEastPoint = point2;
+    MKMapPoint southWestPoint = point1;
+    
     MKMapPoint* pointArr = malloc(sizeof(CLLocationCoordinate2D) * 2);
+    
+    pointArr[0] = point1;
+    pointArr[1] = point2;
+    
+    line = [MKPolyline polylineWithPoints:pointArr count:2];
+    
+    MKMapRect routeRect = MKMapRectMake(southWestPoint.x, southWestPoint.y, northEastPoint.x - southWestPoint.x, northEastPoint.y - southWestPoint.y);
+    
+    free(pointArr); //free the array
+    
+    [self.mapView addOverlay:line];
+    
+    
      
-     IM GOING TO READ THE C BOOK AND COME BACK TO THIS
-     */
+     
     
     
     
@@ -62,6 +79,32 @@
 }
 
 
+
+
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id )overlay
+{
+    MKOverlayView* overlayView = nil;
+    
+    if(overlay == line)
+    {
+        //if we have not yet created an overlay view for this overlay, create it now.
+        if(nil == routeLineView)
+        {
+            routeLineView = [[MKPolylineView alloc] initWithPolyline:line];
+            routeLineView.fillColor = [UIColor redColor];
+            routeLineView.strokeColor = [UIColor redColor];
+            routeLineView.lineWidth = 3;
+        }
+        
+        overlayView = routeLineView;
+        
+    }
+    
+    return overlayView;
+    
+}
+
+
 #pragma mark - location manager delegate
 
 /*
@@ -69,7 +112,7 @@
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {
-    lat1 = newLocation.coordinate.latitude;     //assign these for use by the send function
+    lat1 = newLocation.coordinate.latitude;   
     long1 = newLocation.coordinate.longitude;
 }
  */

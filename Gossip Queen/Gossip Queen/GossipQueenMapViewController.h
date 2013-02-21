@@ -17,6 +17,8 @@
     float lat2;
     float long1;
     float long2;
+    MKPolyline *line;
+    MKPolylineView *routeLineView;
 }
 
 
