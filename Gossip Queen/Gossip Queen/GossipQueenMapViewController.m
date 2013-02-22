@@ -37,23 +37,31 @@
     
     CLLocationDegrees lat2 = 40.7142;
     CLLocationDegrees long2 = -74.0064;
+    
+    CLLocationDegrees lat3 = 47.6097;
+    CLLocationDegrees long3 = -122.3331;
 
     
     
     CLLocationCoordinate2D coord1 = CLLocationCoordinate2DMake(lat1, long1);
     CLLocationCoordinate2D coord2 = CLLocationCoordinate2DMake(lat2, long2);
+    CLLocationCoordinate2D coord3 = CLLocationCoordinate2DMake(lat3, long3);
     
     MKMapPoint point1 = MKMapPointForCoordinate(coord1);
     MKMapPoint point2 = MKMapPointForCoordinate(coord2);
+    MKMapPoint point3 = MKMapPointForCoordinate(coord3);
     
-    MKMapPoint* pointArr = malloc(sizeof(CLLocationCoordinate2D) * 2);
+    MKMapPoint* pointArr = malloc(sizeof(CLLocationCoordinate2D) * 3);
     
     pointArr[0] = point1;
     pointArr[1] = point2;
+    pointArr[2] = point3;
     
-    line = [MKPolyline polylineWithPoints:pointArr count:2];
+    line = [MKPolyline polylineWithPoints:pointArr count:3];
     
     free(pointArr); //free the array
+    
+    lineArray = [[NSMutableArray alloc] init];
     
     [lineArray addObject:line];
     
@@ -87,6 +95,7 @@
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id )overlay
 {
+    /*
     MKOverlayView* overlayView = nil;
     MKPolylineView* lineView;
     
@@ -97,12 +106,14 @@
     
     overlayView = lineView;
     return overlayView;
-
+     */
     
-    /*
+    MKOverlayView* overlayView = nil;
+    MKPolylineView* lineView;
+    
     for (id element in lineArray) {
         
-        
+        NSLog(@"for loop");
         
         if (overlay == element) {
             
@@ -124,7 +135,7 @@
     
     return nil;
      
-    */
+    
     
 }
 
@@ -138,8 +149,8 @@
 {
     latitude = newLocation.coordinate.latitude;
     longitude = newLocation.coordinate.longitude;
-    NSLog(@"Latitude delta: %f",self.mapView.region.span.latitudeDelta);
-    NSLog(@"Longitude delta %f",self.mapView.region.span.longitudeDelta);
+    //NSLog(@"Latitude delta: %f",self.mapView.region.span.latitudeDelta);
+    //NSLog(@"Longitude delta %f",self.mapView.region.span.longitudeDelta);
 
    
 }
