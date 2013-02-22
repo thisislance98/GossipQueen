@@ -187,14 +187,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    [self.navigationController popViewControllerAnimated:YES];
+
+    
+    //[self.navigationController popViewControllerAnimated:YES];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     
     
     
-    
-     //[self.navigationController pushViewController:detailViewController animated:YES];
+    [self performSegueWithIdentifier:@"detail" sender:self];
 }
 
 @end

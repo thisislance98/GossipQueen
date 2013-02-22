@@ -28,6 +28,7 @@
 		B948392016CED0E600438882 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = B948391F16CED0E600438882 /* second.png */; };
 		B948392216CED0E600438882 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B948392116CED0E600438882 /* second@2x.png */; };
 		B9794F7F16CF2F63003BDD68 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9794F7E16CF2F63003BDD68 /* MapKit.framework */; };
+		B9805D3F16D82CDE00802714 /* GossipQueenDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9805D3E16D82CDE00802714 /* GossipQueenDetailViewController.m */; };
 		B9ACB63F16D0E8A1003F5291 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9ACB63E16D0E8A1003F5291 /* Parse.framework */; };
 		B9ACB64116D0E917003F5291 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9ACB64016D0E917003F5291 /* AudioToolbox.framework */; };
 		B9ACB64316D0E91C003F5291 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9ACB64216D0E91C003F5291 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -77,6 +78,8 @@
 		B948391F16CED0E600438882 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		B948392116CED0E600438882 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		B9794F7E16CF2F63003BDD68 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B9805D3D16D82CDE00802714 /* GossipQueenDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GossipQueenDetailViewController.h; sourceTree = "<group>"; };
+		B9805D3E16D82CDE00802714 /* GossipQueenDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GossipQueenDetailViewController.m; sourceTree = "<group>"; };
 		B9ACB63E16D0E8A1003F5291 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		B9ACB64016D0E917003F5291 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B9ACB64216D0E91C003F5291 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -177,6 +180,8 @@
 				B948391216CED0E600438882 /* MainStoryboard_iPad.storyboard */,
 				B90DB85316CF9334008E0B61 /* GossipQueenHistoryViewController.h */,
 				B90DB85416CF9334008E0B61 /* GossipQueenHistoryViewController.m */,
+				B9805D3D16D82CDE00802714 /* GossipQueenDetailViewController.h */,
+				B9805D3E16D82CDE00802714 /* GossipQueenDetailViewController.m */,
 				B9B8606C16D2E5D500B8A95F /* Message.h */,
 				B9B8606D16D2E5D500B8A95F /* Message.m */,
 				B90DB85016CF92D3008E0B61 /* GossipQueenFriendsViewController.h */,
@@ -293,6 +298,7 @@
 				B90DB85516CF9334008E0B61 /* GossipQueenHistoryViewController.m in Sources */,
 				B9B8606E16D2E5D500B8A95F /* Message.m in Sources */,
 				B911A0EE16D37A6D0082D770 /* MessageLookupViewController.m in Sources */,
+				B9805D3F16D82CDE00802714 /* GossipQueenDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
