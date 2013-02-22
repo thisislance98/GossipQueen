@@ -42,28 +42,33 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 2;
 }
+ 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FriendsCell"];
     
-    // Configure the cell...
+    
+    UILabel *header = (UILabel *)[cell viewWithTag:1000];
+    UILabel *date = (UILabel *)[cell viewWithTag:2000];
+    
+    if (indexPath.row == 0) {
+        header.text = @"SMAPALE";
+        date.text = @"12/12/12";
+    } else if (indexPath.row == 1) {
+        header.text = @"Another message";
+        date.text = @"66/66/66";
+    }
+    
     
     return cell;
+
 }
 
 /*
