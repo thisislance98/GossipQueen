@@ -33,7 +33,8 @@
     
     
     
-    [self drawLines];
+    [self drawLineWithCoordinatesLat1:34.0522 long1:-118.2428 lat2:40.7142 long2:-74.0064];
+    [self drawLineWithCoordinatesLat1:-33.8683 long1:151.2086 lat2:40.7142 long2:-74.0064];
 
 
     
@@ -59,37 +60,31 @@
 
 #pragma mark - Drawing Methods
 
--(void) drawLines
+-(void) drawLineWithCoordinatesLat1:(double)lat1 long1:(double)long1 lat2:(double)lat2 long2:(double)long2
 {
-    
+    /*
     CLLocationDegrees lat1 = 34.0522;
     CLLocationDegrees long1 = -118.2428;
     
     CLLocationDegrees lat2 = 40.7142;
     CLLocationDegrees long2 = -74.0064;
+    */
     
-    CLLocationDegrees lat3 = 47.6097;
-    CLLocationDegrees long3 = -122.3331;
-    
-    
-    
+        
     CLLocationCoordinate2D coord1 = CLLocationCoordinate2DMake(lat1, long1);
     CLLocationCoordinate2D coord2 = CLLocationCoordinate2DMake(lat2, long2);
-    CLLocationCoordinate2D coord3 = CLLocationCoordinate2DMake(lat3, long3);
     
     MKMapPoint point1 = MKMapPointForCoordinate(coord1);
     MKMapPoint point2 = MKMapPointForCoordinate(coord2);
-    MKMapPoint point3 = MKMapPointForCoordinate(coord3);
     
-
     
-    MKMapPoint* pointArr = malloc(sizeof(CLLocationCoordinate2D) * 3);
+    MKMapPoint* pointArr = malloc(sizeof(CLLocationCoordinate2D) * 2);
     
     pointArr[0] = point1;
     pointArr[1] = point2;
-    pointArr[2] = point3;
+
     
-    line = [MKPolyline polylineWithPoints:pointArr count:3];
+    line = [MKPolyline polylineWithPoints:pointArr count:2];    
     
     free(pointArr); //free the array
     
