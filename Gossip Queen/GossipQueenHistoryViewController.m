@@ -87,11 +87,6 @@
 
 
 
--(void) showDetails
-{
-    [self performSegueWithIdentifier:@"ohmygod" sender:self];
-}
-
 
 
 
@@ -192,9 +187,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    [self.navigationController popViewControllerAnimated:YES];
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    [self showDetails];
+    
     
     
      //[self.navigationController pushViewController:detailViewController animated:YES];
