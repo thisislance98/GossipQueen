@@ -18,7 +18,9 @@
     double longitude;
   
     MKPolyline *line;
-    MKPolylineView *routeLineView;
+    
+    NSMutableArray *lineArray; //this is for keeping track of all the MKPolyLine objects
+    
 }
 
 

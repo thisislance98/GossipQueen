@@ -46,9 +46,6 @@
     MKMapPoint point1 = MKMapPointForCoordinate(coord1);
     MKMapPoint point2 = MKMapPointForCoordinate(coord2);
     
-    MKMapPoint northEastPoint = point2;
-    MKMapPoint southWestPoint = point1;
-    
     MKMapPoint* pointArr = malloc(sizeof(CLLocationCoordinate2D) * 2);
     
     pointArr[0] = point1;
@@ -58,21 +55,16 @@
     
     free(pointArr); //free the array
     
+    [lineArray addObject:line];
+    
     [self.mapView addOverlay:line];
     [self.mapView setCenterCoordinate:coord1];
     
     NSLog(@"%f",self.mapView.region.span.latitudeDelta);
     NSLog(@"%f",self.mapView.region.span.longitudeDelta);
     
-    
-     
-     
-    
-    
-    
-
-    
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -81,7 +73,7 @@
 }
 
 
--(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event //this is buggy, but its sort of how to do it
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event //this is buggy, but it's one way to detect zoom level
 {
     /*
     if (self.mapView.region.span.longitudeDelta < 4) {
@@ -96,23 +88,43 @@
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id )overlay
 {
     MKOverlayView* overlayView = nil;
+    MKPolylineView* lineView;
     
-    if(overlay == line)
-    {
-        //if we have not yet created an overlay view for this overlay, create it now.
-        if(nil == routeLineView)
-        {
-            routeLineView = [[MKPolylineView alloc] initWithPolyline:line];
-            routeLineView.fillColor = [UIColor redColor];
-            routeLineView.strokeColor = [UIColor redColor];
-            routeLineView.lineWidth = 3;
+    lineView = [[MKPolylineView alloc] initWithPolyline:line];
+    lineView.fillColor = [UIColor redColor];
+    lineView.strokeColor = [UIColor redColor];
+    lineView.lineWidth = 3;
+    
+    overlayView = lineView;
+    return overlayView;
+
+    
+    /*
+    for (id element in lineArray) {
+        
+        
+        
+        if (overlay == element) {
+            
+            if(nil == lineView)
+            {
+                lineView = [[MKPolylineView alloc] initWithPolyline:element];
+                lineView.fillColor = [UIColor redColor];
+                lineView.strokeColor = [UIColor redColor];
+                lineView.lineWidth = 3;
+            }
+            
+            overlayView = lineView;
+            
+            
+            return overlayView;
+
         }
-        
-        overlayView = routeLineView;
-        
     }
     
-    return overlayView;
+    return nil;
+     
+    */
     
 }
 

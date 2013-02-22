@@ -87,6 +87,10 @@
 
 
 
+-(void) showDetails
+{
+    [self performSegueWithIdentifier:@"ohmygod" sender:self];
+}
 
 
 
@@ -189,6 +193,8 @@
 {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    [self showDetails];
     
     
      //[self.navigationController pushViewController:detailViewController animated:YES];
