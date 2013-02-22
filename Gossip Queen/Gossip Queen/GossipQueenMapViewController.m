@@ -23,6 +23,8 @@
 	// Do any additional setup after loading the view.
     NSLog(@"Map");
     
+    lineArray = [[NSMutableArray alloc] init];
+    
     CLLocation *location = mapView.userLocation.location;
     
     locationManager = [[CLLocationManager alloc] init];
@@ -82,19 +84,18 @@
     
     pointArr[0] = point1;
     pointArr[1] = point2;
-
     
-    line = [MKPolyline polylineWithPoints:pointArr count:2];    
+    MKPolyline *line = [MKPolyline polylineWithPoints:pointArr count:2];
     
     free(pointArr); //free the array
-    
-    lineArray = [[NSMutableArray alloc] init];
+
     
     [lineArray addObject:line]; //have to be sure to add the overlay objects to the array
     
     [self.mapView addOverlay:line];
     [self.mapView setCenterCoordinate:coord1];
-
+    
+    
 }
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id )overlay //this is called on the delegate after addOverlay is called
@@ -121,6 +122,7 @@
             
             
             return overlayView;
+            
 
         }
     }

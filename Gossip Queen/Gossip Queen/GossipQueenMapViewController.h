@@ -16,8 +16,6 @@
     CLLocationManager *locationManager;
     double latitude;
     double longitude;
-  
-    MKPolyline *line;
     
     NSMutableArray *lineArray; //this is for keeping track of all the MKPolyLine objects
     
