@@ -32,44 +32,10 @@
     [locationManager startUpdatingLocation];
     
     
-    CLLocationDegrees lat1 = 34.0522;
-    CLLocationDegrees long1 = -118.2428;
     
-    CLLocationDegrees lat2 = 40.7142;
-    CLLocationDegrees long2 = -74.0064;
-    
-    CLLocationDegrees lat3 = 47.6097;
-    CLLocationDegrees long3 = -122.3331;
+    [self drawLines];
 
-    
-    
-    CLLocationCoordinate2D coord1 = CLLocationCoordinate2DMake(lat1, long1);
-    CLLocationCoordinate2D coord2 = CLLocationCoordinate2DMake(lat2, long2);
-    CLLocationCoordinate2D coord3 = CLLocationCoordinate2DMake(lat3, long3);
-    
-    MKMapPoint point1 = MKMapPointForCoordinate(coord1);
-    MKMapPoint point2 = MKMapPointForCoordinate(coord2);
-    MKMapPoint point3 = MKMapPointForCoordinate(coord3);
-    
-    MKMapPoint* pointArr = malloc(sizeof(CLLocationCoordinate2D) * 3);
-    
-    pointArr[0] = point1;
-    pointArr[1] = point2;
-    pointArr[2] = point3;
-    
-    line = [MKPolyline polylineWithPoints:pointArr count:3];
-    
-    free(pointArr); //free the array
-    
-    lineArray = [[NSMutableArray alloc] init];
-    
-    [lineArray addObject:line];
-    
-    [self.mapView addOverlay:line];
-    [self.mapView setCenterCoordinate:coord1];
-    
-    NSLog(@"%f",self.mapView.region.span.latitudeDelta);
-    NSLog(@"%f",self.mapView.region.span.longitudeDelta);
+
     
 }
 
@@ -91,22 +57,53 @@
 }
 
 
-#pragma mark - MapView delegate
+#pragma mark - Drawing Methods
 
-- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id )overlay
+-(void) drawLines
 {
-    /*
-    MKOverlayView* overlayView = nil;
-    MKPolylineView* lineView;
     
-    lineView = [[MKPolylineView alloc] initWithPolyline:line];
-    lineView.fillColor = [UIColor redColor];
-    lineView.strokeColor = [UIColor redColor];
-    lineView.lineWidth = 3;
+    CLLocationDegrees lat1 = 34.0522;
+    CLLocationDegrees long1 = -118.2428;
     
-    overlayView = lineView;
-    return overlayView;
-     */
+    CLLocationDegrees lat2 = 40.7142;
+    CLLocationDegrees long2 = -74.0064;
+    
+    CLLocationDegrees lat3 = 47.6097;
+    CLLocationDegrees long3 = -122.3331;
+    
+    
+    
+    CLLocationCoordinate2D coord1 = CLLocationCoordinate2DMake(lat1, long1);
+    CLLocationCoordinate2D coord2 = CLLocationCoordinate2DMake(lat2, long2);
+    CLLocationCoordinate2D coord3 = CLLocationCoordinate2DMake(lat3, long3);
+    
+    MKMapPoint point1 = MKMapPointForCoordinate(coord1);
+    MKMapPoint point2 = MKMapPointForCoordinate(coord2);
+    MKMapPoint point3 = MKMapPointForCoordinate(coord3);
+    
+
+    
+    MKMapPoint* pointArr = malloc(sizeof(CLLocationCoordinate2D) * 3);
+    
+    pointArr[0] = point1;
+    pointArr[1] = point2;
+    pointArr[2] = point3;
+    
+    line = [MKPolyline polylineWithPoints:pointArr count:3];
+    
+    free(pointArr); //free the array
+    
+    lineArray = [[NSMutableArray alloc] init];
+    
+    [lineArray addObject:line]; //have to be sure to add the overlay objects to the array
+    
+    [self.mapView addOverlay:line];
+    [self.mapView setCenterCoordinate:coord1];
+
+}
+
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id )overlay //this is called on the delegate after addOverlay is called
+{
     
     MKOverlayView* overlayView = nil;
     MKPolylineView* lineView;
