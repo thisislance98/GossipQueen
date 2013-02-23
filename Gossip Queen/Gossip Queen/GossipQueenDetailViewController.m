@@ -34,7 +34,7 @@
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
      NSLog(@"touch");
-    //[self.presentingViewController dismissModalViewControllerAnimated:YES];
+    [self.presentingViewController dismissModalViewControllerAnimated:YES];
 }
 
 @end

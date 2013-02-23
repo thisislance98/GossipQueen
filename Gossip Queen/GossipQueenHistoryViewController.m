@@ -187,7 +187,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-
+    //NEED TO ADD IF STATEMENT CHECKING IF WE TABBED IN OR CAME FROM MAP SCREEN
     
     //[self.navigationController popViewControllerAnimated:YES];
     
