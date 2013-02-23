@@ -45,7 +45,7 @@
     //LONG RUNNING PARSE OPERATION BEING RUN ON A MAIN THREAD BUT IT DISPLAYS!!!!
     PFQuery *query = [PFQuery queryWithClassName:@"Message"];
     PFObject *received = [query getFirstObject];
-    self.receiveField.text = received.objectId;
+    self.receiveField.text = [received objectForKey:@"text"];
     
 }
 
