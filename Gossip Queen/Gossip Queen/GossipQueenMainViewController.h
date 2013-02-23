@@ -12,8 +12,8 @@
 
 @interface GossipQueenMainViewController : UIViewController {
     CLLocationManager *locationManager;
-    float latitude;
-    float longitude;
+    double latitude;
+    double longitude;
 }
 
 @property (weak, nonatomic) IBOutlet UITextView *sendField;
