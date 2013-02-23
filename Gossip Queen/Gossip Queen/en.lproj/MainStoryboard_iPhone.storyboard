@@ -233,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A5F-sN-Ig2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1179" y="-353"/>
+            <point key="canvasLocation" x="1019" y="-273"/>
         </scene>
         <!--Gossip Queen Interests View Controller - Interests-->
         <scene sceneID="8Lz-fi-hXg">
@@ -425,7 +425,7 @@
             <objects>
                 <tableViewController id="eYI-8k-8wc" customClass="GossipQueenHistoryViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bGf-27-vVY">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -478,7 +478,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7zP-ar-gjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1607" y="411"/>
+            <point key="canvasLocation" x="1665" y="253"/>
         </scene>
         <!--Gossip Queen Detail View Controller-->
         <scene sceneID="bzH-bz-JbM">
@@ -492,7 +492,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TbX-Ky-0IV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2159" y="426"/>
+            <point key="canvasLocation" x="2289" y="269"/>
         </scene>
         <!--Gossip Queen Friends View Controller-->
         <scene sceneID="pIg-JK-vWg">
@@ -549,10 +549,78 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="ist-a0-dK4" kind="push" identifier="friendDetail" id="hdA-ZE-eJl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cF-ra-t9H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="95" y="-1487"/>
+            <point key="canvasLocation" x="61" y="-1467"/>
+        </scene>
+        <!--Gossip Queen Friend Detail Controller-->
+        <scene sceneID="vpH-GD-Tkb">
+            <objects>
+                <viewController id="ist-a0-dK4" customClass="GossipQueenFriendDetailController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Gw-mH-wUZ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QDh-Ue-TGO">
+                        <barButtonItem key="rightBarButtonItem" title="View Messages" id="eCE-q6-07V">
+                            <connections>
+                                <segue destination="skn-BD-qRw" kind="push" id="AsW-ZL-1Gu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kKh-MD-a7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="609" y="-1089"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="lXT-ZN-yzq">
+            <objects>
+                <tableViewController id="skn-BD-qRw" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="GTb-PZ-EAJ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="KSY-vu-wwZ">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="skn-BD-qRw" id="qgO-0U-rvQ"/>
+                            <outlet property="delegate" destination="skn-BD-qRw" id="rhq-It-Bv2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="u74-QV-bto"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CUW-Lk-7zS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1157" y="-1089"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7Y6-u4-Rgj">
+            <objects>
+                <viewController id="yK3-Aj-Lze" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1AY-ev-6Af">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Smb-3X-CYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1633" y="-1093"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="X85-Gv-Hy4">
@@ -623,7 +691,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0I-EL-YWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="631" y="-359"/>
+            <point key="canvasLocation" x="463" y="-279"/>
         </scene>
         <!--Navigation Controller - Friends-->
         <scene sceneID="6n2-dd-5H4">
@@ -642,50 +710,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HLi-PH-vZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-435" y="-1487"/>
+            <point key="canvasLocation" x="-435" y="-1467"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="GossipQueenDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenDetailViewController.h"/>
-        </class>
-        <class className="GossipQueenFriendsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenFriendsViewController.h"/>
-        </class>
-        <class className="GossipQueenHistoryViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenHistoryViewController.h"/>
-        </class>
-        <class className="GossipQueenInterestsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenInterestsViewController.h"/>
-        </class>
-        <class className="GossipQueenMainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenMainViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="dislike:"/>
-                <relationship kind="action" name="insertLink:"/>
-                <relationship kind="action" name="like:"/>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="action" name="sendMessage:"/>
-                <relationship kind="outlet" name="receiveField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="sendField" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="GossipQueenMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenMapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="NYJ-Mp-kvH"/>
+        <segue reference="5BG-lR-Bzh"/>
     </inferredMetricsTieBreakers>
 </document>

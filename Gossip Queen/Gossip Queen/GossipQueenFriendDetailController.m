@@ -1,26 +1,23 @@
 //
-//  GossipQueenDetailViewController.m
+//  GossipQueenFriendDetailController.m
 //  Gossip Queen
 //
 //  Created by Noah Harris on 2/22/13.
 //  Copyright (c) 2013 Noah Harris. All rights reserved.
 //
 
-#import "GossipQueenDetailViewController.h"
+#import "GossipQueenFriendDetailController.h"
 
-
-@interface GossipQueenDetailViewController ()
+@interface GossipQueenFriendDetailController ()
 
 @end
 
-@implementation GossipQueenDetailViewController
-
+@implementation GossipQueenFriendDetailController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    NSLog(@"detail");
 }
 
 - (void)didReceiveMemoryWarning
@@ -29,12 +26,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 //this dismisses the view controller
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-     NSLog(@"touch");
+    NSLog(@"touch");
     //[self.presentingViewController dismissModalViewControllerAnimated:YES];
 }
+
 
 @end
