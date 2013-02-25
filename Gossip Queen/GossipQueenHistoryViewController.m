@@ -182,6 +182,13 @@
 }
 */
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"getMessage"];
+}
+
+
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -192,7 +199,8 @@
     
     if([[NSUserDefaults standardUserDefaults] boolForKey:@"getMessage"])
     {
-        [[NSUserDefaults standardUserDefaults] setInteger:(int)indexPath forKey:@"chosenString"];
+        [[NSUserDefaults standardUserDefaults] setInteger:indexPath.row forKey:@"chosenString"];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"getMessage"];
         
         [self.navigationController popViewControllerAnimated:YES];
         

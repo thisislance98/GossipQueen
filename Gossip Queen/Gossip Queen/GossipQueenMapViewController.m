@@ -34,18 +34,20 @@
     [locationManager startUpdatingLocation];
     
     [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"chosenString"]; //TESTING
-    
+
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"chosenString"] == 1)
     {
-    
-    [self drawLineWithCoordinatesLat1:34.0523 long1:-118.2428 lat2:40.7142 long2:-74.0064];
-    [self drawLineWithCoordinatesLat1:-33.8683 long1:151.2086 lat2:40.7142 long2:-74.0064];
-    [self drawLineWithCoordinatesLat1:-33.8683 long1:151.2086 lat2:34.0522 long2:-118.2428];
-    
+        
+        [self drawLineWithCoordinatesLat1:34.0523 long1:-118.2428 lat2:40.7142 long2:-74.0064];
+        [self drawLineWithCoordinatesLat1:-33.8683 long1:151.2086 lat2:40.7142 long2:-74.0064];
+        [self drawLineWithCoordinatesLat1:-33.8683 long1:151.2086 lat2:34.0522 long2:-118.2428];
+        
     }
 
-
-    
 }
 
 
@@ -56,7 +58,7 @@
 }
 
 
--(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event //this is buggy, but it's one way to detect zoom level
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event //this is buggy, but it's one way to detect zoom level
 {
     /*
     if (self.mapView.region.span.longitudeDelta < 4) {
