@@ -16,6 +16,8 @@
 @implementation GossipQueenHistoryViewController {
 }
 
+@synthesize messageArray;
+
 
 
 
