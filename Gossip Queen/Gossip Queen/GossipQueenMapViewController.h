@@ -18,6 +18,7 @@
     double longitude;
     
     NSMutableArray *lineArray; //this is for keeping track of all the MKPolyLine objects
+    NSMutableArray *overlayArray; //this is for keeping track of the overlay objects
     
 }
 

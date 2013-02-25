@@ -24,6 +24,7 @@
     NSLog(@"Map");
     
     lineArray = [[NSMutableArray alloc] init];
+    overlayArray = [[NSMutableArray alloc] init];
     
     CLLocation *location = mapView.userLocation.location;
     
@@ -33,22 +34,28 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
     [locationManager startUpdatingLocation];
     
-    [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"chosenString"]; //TESTING
+    [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"chosenString"]; //TESTING
+    
 
 }
 
--(void)viewWillAppear:(BOOL)animated
+-(void)viewDidAppear:(BOOL)animated
 {
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"chosenString"] == 1)
-    {
+    
+        [mapView removeOverlays: mapView.overlays];
         
-        [self drawLineWithCoordinatesLat1:34.0523 long1:-118.2428 lat2:40.7142 long2:-74.0064];
-        [self drawLineWithCoordinatesLat1:-33.8683 long1:151.2086 lat2:40.7142 long2:-74.0064];
-        [self drawLineWithCoordinatesLat1:-33.8683 long1:151.2086 lat2:34.0522 long2:-118.2428];
+        int yup = [[NSUserDefaults standardUserDefaults] boolForKey:@"chosenString"];
+        NSLog(@"jkfldsa   jf-----%i", yup);
         
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"chosenString"] == 1)
+        {
+            [self drawLineWithCoordinatesLat1:34.0523 long1:-118.2428 lat2:40.7142 long2:-74.0064];
+            [self drawLineWithCoordinatesLat1:-33.8683 long1:151.2086 lat2:40.7142 long2:-74.0064];
+            [self drawLineWithCoordinatesLat1:-33.8683 long1:151.2086 lat2:34.0522 long2:-118.2428];
+        }
+    
     }
-
-}
+    
 
 
 - (void)didReceiveMemoryWarning
@@ -121,8 +128,6 @@
     
     for (id element in lineArray) {
         
-        NSLog(@"for loop");
-        
         if (overlay == element) {
             
             if(nil == lineView)
@@ -134,6 +139,7 @@
             }
             
             overlayView = lineView;
+            [overlayArray addObject:overlayView];
             
             
             return overlayView;
