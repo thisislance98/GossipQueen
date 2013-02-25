@@ -186,14 +186,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //This logic makes it so you can access the history screen from either map (choose message) or tab with the proper actions taken
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if([[NSUserDefaults standardUserDefaults] boolForKey:@"getMessage"])
     {
+        [[NSUserDefaults standardUserDefaults] setInteger:(int)indexPath forKey:@"chosenString"];
+        
         [self.navigationController popViewControllerAnimated:YES];
+        
     } else {
+        
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        
         [self performSegueWithIdentifier:@"detail" sender:self];
     }
 }

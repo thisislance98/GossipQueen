@@ -33,11 +33,16 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
     [locationManager startUpdatingLocation];
     
+    [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"chosenString"]; //TESTING
     
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"chosenString"] == 1)
+    {
     
     [self drawLineWithCoordinatesLat1:34.0523 long1:-118.2428 lat2:40.7142 long2:-74.0064];
     [self drawLineWithCoordinatesLat1:-33.8683 long1:151.2086 lat2:40.7142 long2:-74.0064];
     [self drawLineWithCoordinatesLat1:-33.8683 long1:151.2086 lat2:34.0522 long2:-118.2428];
+    
+    }
 
 
     
