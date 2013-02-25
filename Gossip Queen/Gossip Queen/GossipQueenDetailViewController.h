@@ -10,5 +10,6 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface GossipQueenDetailViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *mainField;
 
 @end
