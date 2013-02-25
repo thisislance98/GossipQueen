@@ -60,6 +60,13 @@
      */
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    //TODO
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"getMessage"];
+}
+
+
 
 #pragma mark - Drawing Methods
 

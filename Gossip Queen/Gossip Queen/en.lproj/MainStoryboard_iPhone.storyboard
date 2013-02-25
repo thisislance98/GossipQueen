@@ -425,7 +425,7 @@
             <objects>
                 <tableViewController id="eYI-8k-8wc" customClass="GossipQueenHistoryViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bGf-27-vVY">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -492,7 +492,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TbX-Ky-0IV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2289" y="269"/>
+            <point key="canvasLocation" x="2205" y="253"/>
         </scene>
         <!--Gossip Queen Friends View Controller-->
         <scene sceneID="pIg-JK-vWg">
@@ -555,7 +555,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cF-ra-t9H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="61" y="-1467"/>
+            <point key="canvasLocation" x="105" y="-1799"/>
         </scene>
         <!--Gossip Queen Friend Detail Controller-->
         <scene sceneID="vpH-GD-Tkb">
@@ -576,7 +576,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kKh-MD-a7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="609" y="-1089"/>
+            <point key="canvasLocation" x="749" y="-1537"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="lXT-ZN-yzq">
@@ -606,7 +606,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CUW-Lk-7zS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1157" y="-1089"/>
+            <point key="canvasLocation" x="1397" y="-1573"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="7Y6-u4-Rgj">
@@ -620,7 +620,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Smb-3X-CYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1633" y="-1093"/>
+            <point key="canvasLocation" x="2133" y="-1617"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="X85-Gv-Hy4">
@@ -672,7 +672,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JTq-8T-paG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="727" y="-1872"/>
+            <point key="canvasLocation" x="867" y="-2304"/>
         </scene>
         <!--Navigation Controller - Map-->
         <scene sceneID="eBL-cV-BZZ">
@@ -710,7 +710,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HLi-PH-vZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-435" y="-1467"/>
+            <point key="canvasLocation" x="-427" y="-1711"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -719,6 +719,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="NYJ-Mp-kvH"/>
+        <segue reference="5BG-lR-Bzh"/>
     </inferredMetricsTieBreakers>
 </document>

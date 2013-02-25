@@ -187,16 +187,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    //NEED TO ADD IF STATEMENT CHECKING IF WE TABBED IN OR CAME FROM MAP SCREEN
-    
-    //[self.navigationController popViewControllerAnimated:YES];
-    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
     
-    
-    
-    [self performSegueWithIdentifier:@"detail" sender:self];
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"getMessage"])
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    } else {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        [self performSegueWithIdentifier:@"detail" sender:self];
+    }
 }
 
 @end
