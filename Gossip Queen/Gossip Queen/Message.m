@@ -10,19 +10,28 @@
 
 @implementation Message
 
-@synthesize text, dateSent;
+@synthesize text, lineArray, userName;
+
+
+
+
+
+
+#pragma mark - NSCoding
 
 -(void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.text forKey:@"text"];
-    [aCoder encodeObject:self.dateSent forKey:@"dateSent"];
+    [aCoder encodeObject:self.lineArray forKey:@"lineArray"];
+    [aCoder encodeObject:self.userName forKey:@"userName"];
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     if ((self = [super init])) {
         self.text = [aDecoder decodeObjectForKey:@"text"];
-        self.dateSent = [aDecoder decodeObjectForKey:@"dateSent"];
+        self.lineArray = [aDecoder decodeObjectForKey:@"lineArray"];
+        self.userName = [aDecoder decodeObjectForKey:@"userName"];
     }
     return self;
 }
