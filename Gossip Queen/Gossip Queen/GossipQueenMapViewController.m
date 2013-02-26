@@ -74,9 +74,10 @@
      */
 }
 
+
+//this is for navigation logic in the history view controller
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    //TODO
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"getMessage"];
 }
 
@@ -119,6 +120,8 @@
     
     
 }
+
+#pragma mark - mapView delegate
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id )overlay //this is called on the delegate after addOverlay is called
 {

@@ -40,9 +40,6 @@
 
 #pragma mark - Table view delegate
 
-//#######################################
-//Here is the selection logic
-//###########################################
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -56,14 +53,5 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];  //this makes the row only blink blue when selected
 }
-
-
-
-
-
-
-
-
-
 
 @end

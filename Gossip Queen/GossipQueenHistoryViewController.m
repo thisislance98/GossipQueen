@@ -21,7 +21,7 @@
 
 
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (id)initWithCoder:(NSCoder *)aDecoder //this is necessary for the loading the messages
 {
     if ((self = [super initWithCoder:aDecoder])) {
         
@@ -33,7 +33,7 @@
         
         //Test code
         //sampleMessage = [[Message alloc] init];
-        //sampleMessage.text = @"This is a sample Message";
+        //sampleMessage.text = @"THIS IS CRAZY";
         
         //[messageArray addObject:sampleMessage];
         
@@ -41,15 +41,38 @@
 
         NSLog(@"Documents folder is %@", [self documentsDirectory]);
         NSLog(@"Data file path is %@", [self dataFilePath]);
+        NSLog(@"message count is %i", [messageArray count]);
 
     }
     return self;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+//this is part of the navigation logic
+//this prevents the history screen from accidentally thinking it's choosing a message for the map screen later on
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"getMessage"];
+}
 
 
 
-//data access methods
+
+#pragma mark - Data access
+
 - (NSString *)documentsDirectory
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -89,32 +112,6 @@
 
 
 
-
-
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    NSLog(@"History");
-}
-
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -130,65 +127,16 @@
     UILabel *header = (UILabel *)[cell viewWithTag:1000];
     UILabel *date = (UILabel *)[cell viewWithTag:2000];
     
-    Message *test = [messageArray objectAtIndex:0];
+    Message *temp = [messageArray objectAtIndex:indexPath.row]; //indexes into the master message array
     
-    if (indexPath.row == 0) {
-        header.text = test.text;
-        date.text = @"12/12/12";
-    } else if (indexPath.row == 1) {
-        header.text = @"Another message";
-        date.text = @"66/66/66";
-    }
+    header.text = temp.text;
+    date.text = @"test";
     
     
     return cell;
         
         
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
--(void)viewWillDisappear:(BOOL)animated
-{
-    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"getMessage"];
-}
-
 
 
 #pragma mark - Table view delegate

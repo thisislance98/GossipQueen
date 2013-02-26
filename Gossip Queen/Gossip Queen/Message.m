@@ -10,9 +10,7 @@
 
 @implementation Message
 
-@synthesize text, lineArray, userName;
-
-
+@synthesize text, lineArray, userName, category, dateSent;
 
 
 
@@ -24,6 +22,8 @@
     [aCoder encodeObject:self.text forKey:@"text"];
     [aCoder encodeObject:self.lineArray forKey:@"lineArray"];
     [aCoder encodeObject:self.userName forKey:@"userName"];
+    [aCoder encodeObject:self.category forKey:@"category"];
+    [aCoder encodeObject:self.dateSent forKey:@"dateSent"];
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder
@@ -32,6 +32,8 @@
         self.text = [aDecoder decodeObjectForKey:@"text"];
         self.lineArray = [aDecoder decodeObjectForKey:@"lineArray"];
         self.userName = [aDecoder decodeObjectForKey:@"userName"];
+        self.category = [aDecoder decodeObjectForKey:@"category"];
+        self.dateSent = [aDecoder decodeObjectForKey:@"dateSent"];
     }
     return self;
 }
