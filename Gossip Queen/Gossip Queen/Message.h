@@ -11,7 +11,7 @@
 @interface Message : NSObject <NSCoding>
 
 @property (nonatomic, copy) NSString *text;
-@property (nonatomic, copy) NSMutableArray *lineArray;
+@property (nonatomic, retain) NSMutableArray *lineArray;
 @property (nonatomic, copy) NSString *userName;
 @property (nonatomic, copy) NSString *category;
 @property (nonatomic, copy) NSDate *dateSent;

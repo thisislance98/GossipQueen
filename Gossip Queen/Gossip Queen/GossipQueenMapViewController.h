@@ -11,6 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <QuartzCore/QuartzCore.h>
 #import "GossipQueenHistoryViewController.h" //for the delegate pattern (passing data back from history)
+#import "Message.h"
 
 @interface GossipQueenMapViewController : UIViewController <MKMapViewDelegate, ViewControllerDelegate> {
     
@@ -18,11 +19,12 @@
     double latitude;
     double longitude;
     
-    NSMutableArray *lineArray; //this is for keeping track of all the MKPolyLine objects
-    NSMutableArray *overlayArray; //this is for keeping track of the overlay objects
+    Message *currentMessage; //This stores the current message being displayed by the map
     
+    
+    //THIS IS GOING TO BE REPLACED
+    NSMutableArray *lineArray;
 }
-
 
 
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;

@@ -13,7 +13,13 @@
 @synthesize text, lineArray, userName, category, dateSent;
 
 
-
+-(Message *)init {
+    
+    if ((self = [super init]))
+    {
+        self.lineArray = [[NSMutableArray alloc] init];
+    }
+}
 
 #pragma mark - NSCoding
 

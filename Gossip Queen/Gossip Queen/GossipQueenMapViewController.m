@@ -20,13 +20,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    NSLog(@"Map");
     
     lineArray = [[NSMutableArray alloc] init];
-    overlayArray = [[NSMutableArray alloc] init];
     
     CLLocation *location = mapView.userLocation.location;
+    
     
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
@@ -34,14 +32,24 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
     [locationManager startUpdatingLocation];
     
+    
     [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"chosenString"]; //TESTING
+    
+    //##########################################################################################
+    //######################################################################################################
+    
+    currentMessage = [[Message alloc] init];
+    
+    MKPolyline *temp = [self drawLineWithCoordinatesLat1:34.0523 long1:-118.2428 lat2:40.7142 long2:-74.0064];
+    [currentMessage.lineArray addObject:temp];
+    [self.mapView addOverlay:temp];
     
 
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    
+    /*
         [mapView removeOverlays: mapView.overlays];
         
         int yup = [[NSUserDefaults standardUserDefaults] boolForKey:@"chosenString"];
@@ -54,8 +62,9 @@
             [self drawLineWithCoordinatesLat1:-33.8683 long1:151.2086 lat2:34.0522 long2:-118.2428];
         }
     
-    }
     
+     */
+}
 
 
 - (void)didReceiveMemoryWarning
@@ -86,9 +95,9 @@
 
 
 
-#pragma mark - Drawing Methods
+#pragma mark - Drawing
 
--(void) drawLineWithCoordinatesLat1:(double)lat1 long1:(double)long1 lat2:(double)lat2 long2:(double)long2
+-(MKPolyline *) drawLineWithCoordinatesLat1:(double)lat1 long1:(double)long1 lat2:(double)lat2 long2:(double)long2
 {
     /*
     CLLocationDegrees lat1 = 34.0522;
@@ -116,20 +125,26 @@
     free(pointArr); //free the array
 
     
-    [lineArray addObject:line]; //have to be sure to add the overlay objects to the array
+    //[lineArray addObject:line]; // lineArray is going to be replaced by the Message object's array
     
-    [self.mapView addOverlay:line];
-    [self.mapView setCenterCoordinate:coord1];
+    //[self.mapView addOverlay:line];
+    //[self.mapView setCenterCoordinate:coord1];
+    
+    return line;
     
     
 }
 
 #pragma mark - view controller delegate
 
+//############################################ THIS IS THE MESSAGE WE GET BACK FROM HISTORY SCREEN ###############
+
 - (void)addItemViewController:(GossipQueenHistoryViewController *)controller didFinishEnteringItem:(Message *)item
 {
     NSLog(item.text);
 }
+
+//################################################################################################################
 
 #pragma mark - mapView delegate
 
@@ -139,7 +154,7 @@
     MKOverlayView* overlayView = nil;
     MKPolylineView* lineView;
     
-    for (id element in lineArray) {
+    for (id element in currentMessage.lineArray) {  //ALTERED FOR TRANSITION TO USING MESSAGE OBJECTS
         
         if (overlay == element) {
             
@@ -152,7 +167,6 @@
             }
             
             overlayView = lineView;
-            [overlayArray addObject:overlayView];
             
             
             return overlayView;
