@@ -27,10 +27,8 @@
         
         messageArray = [[NSMutableArray alloc] init];
         sendingMessage = [[Message alloc] init];
+        
         [self loadMessages];
-        
-        
-        
         
         //Test code
         //sampleMessage = [[Message alloc] init];
@@ -48,10 +46,12 @@
     return self;
 }
 
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     
 }
 
