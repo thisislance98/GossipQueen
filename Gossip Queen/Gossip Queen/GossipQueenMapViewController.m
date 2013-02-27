@@ -23,8 +23,6 @@
     
     lineArray = [[NSMutableArray alloc] init];
     
-    CLLocation *location = mapView.userLocation.location;
-    
     
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
@@ -40,16 +38,16 @@
     
     currentMessage = [[Message alloc] init];
     
-    MKPolyline *temp = [self drawLineWithCoordinatesLat1:34.0523 long1:-118.2428 lat2:40.7142 long2:-74.0064];
-    [currentMessage.lineArray addObject:temp];
-    [self.mapView addOverlay:temp];
+    //MKPolyline *temp = [self drawLineWithCoordinatesLat1:34.0523 long1:-118.2428 lat2:40.7142 long2:-74.0064];
+    //[currentMessage.lineArray addObject:temp];      NOT WORKING!!!!!!!!!
+    //[self.mapView addOverlay:temp];
     
 
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    /*
+    
         [mapView removeOverlays: mapView.overlays];
         
         int yup = [[NSUserDefaults standardUserDefaults] boolForKey:@"chosenString"];
@@ -63,7 +61,7 @@
         }
     
     
-     */
+     
 }
 
 
@@ -124,11 +122,12 @@
     
     free(pointArr); //free the array
 
+    //################################################# THESE WILL BE REMOVED ONCE THE MESSAGE CLASS WORKS
+    [lineArray addObject:line]; // lineArray is going to be replaced by the Message object's array
     
-    //[lineArray addObject:line]; // lineArray is going to be replaced by the Message object's array
-    
-    //[self.mapView addOverlay:line];
-    //[self.mapView setCenterCoordinate:coord1];
+    [self.mapView addOverlay:line];
+    [self.mapView setCenterCoordinate:coord1];
+    //#################################################
     
     return line;
     
@@ -137,14 +136,12 @@
 
 #pragma mark - view controller delegate
 
-//############################################ THIS IS THE MESSAGE WE GET BACK FROM HISTORY SCREEN ###############
 
 - (void)addItemViewController:(GossipQueenHistoryViewController *)controller didFinishEnteringItem:(Message *)item
 {
     NSLog(item.text);
 }
 
-//################################################################################################################
 
 #pragma mark - mapView delegate
 
@@ -154,7 +151,7 @@
     MKOverlayView* overlayView = nil;
     MKPolylineView* lineView;
     
-    for (id element in currentMessage.lineArray) {  //ALTERED FOR TRANSITION TO USING MESSAGE OBJECTS
+    for (id element in lineArray) {  //CHANGS THIS TO currentMessage.lineArray WHEN I FIGURE OUT WHAT'S WRONG
         
         if (overlay == element) {
             
