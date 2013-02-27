@@ -10,8 +10,9 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <QuartzCore/QuartzCore.h>
+#import "GossipQueenHistoryViewController.h" //for the delegate pattern (passing data back from history)
 
-@interface GossipQueenMapViewController : UIViewController <MKMapViewDelegate> {
+@interface GossipQueenMapViewController : UIViewController <MKMapViewDelegate, ViewControllerDelegate> {
     
     CLLocationManager *locationManager;
     double latitude;

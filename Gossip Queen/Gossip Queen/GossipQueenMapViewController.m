@@ -76,9 +76,12 @@
 
 
 //this is for navigation logic in the history view controller
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender //THIS ASSUMES WE ARE ONLY DOING ONE SEGUE
 {
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"getMessage"];
+    GossipQueenHistoryViewController *controller = segue.destinationViewController;
+    controller.delegate = self; //assign self as delegate
+    
 }
 
 
@@ -119,6 +122,13 @@
     [self.mapView setCenterCoordinate:coord1];
     
     
+}
+
+#pragma mark - view controller delegate
+
+- (void)addItemViewController:(GossipQueenHistoryViewController *)controller didFinishEnteringItem:(Message *)item
+{
+    NSLog(item.text);
 }
 
 #pragma mark - mapView delegate

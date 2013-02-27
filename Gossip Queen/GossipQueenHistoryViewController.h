@@ -10,6 +10,18 @@
 #import "Message.h"
 #import "GossipQueenDetailViewController.h" //need to import this to pass the detail view it's message
 
+
+//using the delegation pattern to pass data back to the map
+//##########################################
+@class GossipQueenHistoryViewController;
+
+@protocol ViewControllerDelegate <NSObject>
+- (void)addItemViewController:(GossipQueenHistoryViewController *)controller didFinishEnteringItem:(Message *)item;
+
+@end
+//##########################################
+
+
 @interface GossipQueenHistoryViewController : UITableViewController {
     Message *sampleMessage;
     
@@ -17,6 +29,8 @@
 }
 
 @property (nonatomic, copy) NSMutableArray *messageArray;
+
+@property (nonatomic, weak) id <ViewControllerDelegate> delegate; //create a delgate property
 
 @end
 

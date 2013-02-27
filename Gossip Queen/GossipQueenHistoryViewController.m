@@ -163,6 +163,10 @@
         [[NSUserDefaults standardUserDefaults] setInteger:indexPath.row forKey:@"chosenString"];
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"getMessage"];
         
+        //this passes data back to the map view controller
+        Message *itemToPassBack = [messageArray objectAtIndex:indexPath.row];
+        [self.delegate addItemViewController:self didFinishEnteringItem:itemToPassBack];
+        
         [self.navigationController popViewControllerAnimated:YES];
         
     } else {
