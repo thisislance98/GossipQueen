@@ -21,7 +21,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     NSLog(@"detail");
-    //self.mainField.text = self. NEEEEED TO FIND A WAY TO REFERENCE THOSE MESSAGES.... EXTERNAL GLOBAL VARIABLES??
+    self.mainField.text = self.message.text; //this latter property is assigned in the history controller via segue
 }
 
 - (void)didReceiveMemoryWarning

@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "Message.h"
 
 @interface GossipQueenDetailViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UITextView *mainField;
+@property (weak, nonatomic) Message *message;
 
 @end

@@ -26,6 +26,7 @@
     if ((self = [super initWithCoder:aDecoder])) {
         
         messageArray = [[NSMutableArray alloc] init];
+        sendingMessage = [[Message alloc] init];
         [self loadMessages];
         
         
@@ -66,6 +67,16 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"getMessage"];
+}
+
+//##############################################
+//THIS IS HOW DATA IS BEING PASSED TO THE DETAIL VIEW
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"detail"]){
+        GossipQueenDetailViewController *controller = (GossipQueenDetailViewController *)segue.destinationViewController;
+        controller.message = sendingMessage;
+    }
 }
 
 
@@ -157,6 +168,7 @@
     } else {
         
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        sendingMessage = [messageArray objectAtIndex:indexPath.row]; //set sending message to the proper message
         
         [self performSegueWithIdentifier:@"detail" sender:self];
     }

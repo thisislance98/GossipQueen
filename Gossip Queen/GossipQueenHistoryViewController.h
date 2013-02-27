@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Message.h"
+#import "GossipQueenDetailViewController.h" //need to import this to pass the detail view it's message
 
 @interface GossipQueenHistoryViewController : UITableViewController {
     Message *sampleMessage;
-    //NSMutableArray *messageArray;
+    
+    Message *sendingMessage; //this is used to send the proper message to the detail view
 }
 
 @property (nonatomic, copy) NSMutableArray *messageArray;
