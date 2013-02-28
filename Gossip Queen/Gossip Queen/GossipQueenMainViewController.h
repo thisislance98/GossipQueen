@@ -14,6 +14,7 @@
     CLLocationManager *locationManager;
     double latitude;
     double longitude;
+    PFObject *currentParseMessage;
 }
 
 @property (weak, nonatomic) IBOutlet UITextView *sendField;
