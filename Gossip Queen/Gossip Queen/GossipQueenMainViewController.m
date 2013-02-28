@@ -88,6 +88,10 @@
     
     [self.sendField resignFirstResponder]; //release the keyboard
     
+    //switches the view to the map screen
+    UITabBarController *tab = (UITabBarController *)self.tabBarController;
+    tab.selectedIndex = 1;
+    
     
 }
 
@@ -109,9 +113,12 @@
     NSLog(@"dislike");
 }
 
-- (IBAction)save:(id)sender {
-    NSLog(@"save");
+- (IBAction)showInMap:(id)sender {
+    NSLog(@"show in map");
+    UITabBarController *tab = (UITabBarController *)self.tabBarController;
+    tab.selectedIndex = 1;
 }
+
 
 #pragma mark - location manager delegate
 

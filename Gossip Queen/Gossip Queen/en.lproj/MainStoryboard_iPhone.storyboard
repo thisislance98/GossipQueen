@@ -28,7 +28,6 @@
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZU-Pn-CkW">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="122" id="eLU-en-YbW"/>
-                                    <constraint firstAttribute="width" constant="287" id="mhi-Ur-IPa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
@@ -42,7 +41,6 @@
                             <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NE-3M-ueM">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="Yc2-1V-NIS"/>
-                                    <constraint firstAttribute="height" constant="43" id="lRG-6W-QeH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Like">
@@ -89,6 +87,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="102" id="8Fj-yR-Qfc"/>
+                                    <constraint firstAttribute="width" constant="252" id="uPG-Ds-IdG"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -125,10 +124,11 @@
                             </button>
                             <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDq-Nn-AbX">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="74" id="0Hp-zK-pIk"/>
+                                    <constraint firstAttribute="height" constant="31" id="FON-ws-GO3"/>
+                                    <constraint firstAttribute="width" constant="100" id="S2i-qt-s7S"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Save">
+                                <state key="normal" title="Show In Map">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -139,22 +139,39 @@
                                     <action selector="save:" destination="2" eventType="touchUpInside" id="dbq-vx-dQ3"/>
                                 </connections>
                             </button>
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8S-zX-L96">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="tMf-RA-QNl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Show In Map">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showInMap:" destination="2" eventType="touchUpInside" id="3A8-VN-G4D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5Mc-mz-eqp" firstAttribute="centerX" secondItem="JZU-Pn-CkW" secondAttribute="centerX" type="default" id="0LU-vx-ZgD"/>
-                            <constraint firstItem="gO6-gw-LKw" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="34" id="Bl2-io-omo"/>
+                            <constraint firstAttribute="bottom" secondItem="z8S-zX-L96" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="0yr-eE-hkU"/>
+                            <constraint firstItem="z8S-zX-L96" firstAttribute="centerX" secondItem="UDq-Nn-AbX" secondAttribute="centerX" type="default" id="5xd-cB-pw6"/>
+                            <constraint firstItem="z8S-zX-L96" firstAttribute="centerX" secondItem="5Mc-mz-eqp" secondAttribute="centerX" type="default" id="AmH-jB-P4P"/>
                             <constraint firstItem="SdW-4Z-k3c" firstAttribute="top" secondItem="16" secondAttribute="top" constant="20" symbolic="YES" type="default" id="FLh-GO-siX"/>
-                            <constraint firstItem="VCt-Ic-noY" firstAttribute="centerY" secondItem="UDq-Nn-AbX" secondAttribute="centerY" type="default" id="KjD-lv-l5G"/>
+                            <constraint firstItem="0NE-3M-ueM" firstAttribute="baseline" secondItem="UDq-Nn-AbX" secondAttribute="baseline" type="default" id="HpE-le-Cvq"/>
                             <constraint firstItem="dC9-zc-PHz" firstAttribute="baseline" secondItem="gO6-gw-LKw" secondAttribute="baseline" type="default" id="OXZ-Pu-ARs"/>
                             <constraint firstItem="JZU-Pn-CkW" firstAttribute="centerY" secondItem="5Mc-mz-eqp" secondAttribute="centerY" type="default" id="Olc-Pn-XPo"/>
-                            <constraint firstAttribute="trailing" secondItem="VCt-Ic-noY" secondAttribute="trailing" constant="25" id="Rti-f3-Eg0"/>
+                            <constraint firstAttribute="trailing" secondItem="VCt-Ic-noY" secondAttribute="trailing" constant="25" id="SMG-lW-Jbt"/>
+                            <constraint firstItem="z8S-zX-L96" firstAttribute="top" secondItem="UDq-Nn-AbX" secondAttribute="top" type="default" id="TV3-0a-WIB"/>
                             <constraint firstItem="Qxq-JN-aOK" firstAttribute="centerX" secondItem="SdW-4Z-k3c" secondAttribute="centerX" type="default" id="Uzb-NH-f8q"/>
-                            <constraint firstItem="0NE-3M-ueM" firstAttribute="baseline" secondItem="UDq-Nn-AbX" secondAttribute="baseline" type="default" id="V0R-fj-CGU"/>
                             <constraint firstAttribute="trailing" secondItem="SdW-4Z-k3c" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ZP9-pF-Syf"/>
+                            <constraint firstItem="VCt-Ic-noY" firstAttribute="baseline" secondItem="UDq-Nn-AbX" secondAttribute="baseline" type="default" id="aEZ-AP-7eI"/>
                             <constraint firstAttribute="bottom" secondItem="UDq-Nn-AbX" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="c75-mR-CcJ"/>
-                            <constraint firstItem="UDq-Nn-AbX" firstAttribute="centerX" secondItem="Qxq-JN-aOK" secondAttribute="centerX" type="default" id="cPq-wE-rmL"/>
-                            <constraint firstItem="VCt-Ic-noY" firstAttribute="top" secondItem="0NE-3M-ueM" secondAttribute="top" type="default" id="gSt-VY-ljr"/>
                             <constraint firstItem="SdW-4Z-k3c" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="j5K-3Q-Nog"/>
                             <constraint firstAttribute="bottom" secondItem="JZU-Pn-CkW" secondAttribute="bottom" constant="67" id="l50-nd-1fT"/>
                             <constraint firstItem="gO6-gw-LKw" firstAttribute="leading" secondItem="Qxq-JN-aOK" secondAttribute="leading" type="default" id="lpd-te-qMd"/>
@@ -162,8 +179,8 @@
                             <constraint firstItem="dC9-zc-PHz" firstAttribute="trailing" secondItem="Qxq-JN-aOK" secondAttribute="trailing" type="default" id="pLY-FA-DQp"/>
                             <constraint firstItem="0NE-3M-ueM" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rio-9B-3GY"/>
                             <constraint firstItem="gO6-gw-LKw" firstAttribute="top" secondItem="SdW-4Z-k3c" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="uuu-i2-vx8"/>
+                            <constraint firstItem="z8S-zX-L96" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="103" id="wfl-Bp-eMX"/>
                             <constraint firstItem="Qxq-JN-aOK" firstAttribute="top" secondItem="16" secondAttribute="top" constant="38" id="xYS-re-ZvP"/>
-                            <constraint firstAttribute="bottom" secondItem="0NE-3M-ueM" secondAttribute="bottom" constant="14" id="ygR-68-pt3"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" id="7"/>
@@ -189,9 +206,9 @@
                     <connections>
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="26"/>
                         <segue destination="cbo-Ni-Tkw" kind="relationship" relationship="viewControllers" id="c5b-48-BP2"/>
-                        <segue destination="5C3-8r-4vI" kind="relationship" relationship="viewControllers" id="jmi-MQ-BNV"/>
-                        <segue destination="suG-Pr-8ZD" kind="relationship" relationship="viewControllers" id="3Li-zw-7Ke"/>
                         <segue destination="eYI-8k-8wc" kind="relationship" relationship="viewControllers" id="NYJ-Mp-kvH"/>
+                        <segue destination="suG-Pr-8ZD" kind="relationship" relationship="viewControllers" id="3Li-zw-7Ke"/>
+                        <segue destination="5C3-8r-4vI" kind="relationship" relationship="viewControllers" id="jmi-MQ-BNV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
@@ -490,7 +507,7 @@
                         <subviews>
                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5N-au-CJ0">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -730,47 +747,6 @@
             <point key="canvasLocation" x="-427" y="-1711"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="GossipQueenDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mainField" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="GossipQueenFriendDetailController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenFriendDetailController.h"/>
-        </class>
-        <class className="GossipQueenFriendsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenFriendsViewController.h"/>
-        </class>
-        <class className="GossipQueenHistoryViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenHistoryViewController.h"/>
-        </class>
-        <class className="GossipQueenInterestsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenInterestsViewController.h"/>
-        </class>
-        <class className="GossipQueenMainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenMainViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="dislike:"/>
-                <relationship kind="action" name="insertLink:"/>
-                <relationship kind="action" name="like:"/>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="action" name="sendMessage:"/>
-                <relationship kind="outlet" name="receiveField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="sendField" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="GossipQueenMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenMapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

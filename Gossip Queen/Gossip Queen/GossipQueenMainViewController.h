@@ -24,7 +24,7 @@
 - (IBAction)insertLink:(id)sender;
 - (IBAction)like:(id)sender;
 - (IBAction)dislike:(id)sender;
-- (IBAction)save:(id)sender;
+- (IBAction)showInMap:(id)sender;
 
 
 @end
