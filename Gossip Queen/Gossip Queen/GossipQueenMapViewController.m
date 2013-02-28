@@ -38,8 +38,8 @@
     
     currentMessage = [[Message alloc] init];
     
-    //MKPolyline *temp = [self drawLineWithCoordinatesLat1:34.0523 long1:-118.2428 lat2:40.7142 long2:-74.0064];
-    //[currentMessage.lineArray addObject:temp];      NOT WORKING!!!!!!!!!
+    MKPolyline *temp = [self drawLineWithCoordinatesLat1:34.0523 long1:-118.2428 lat2:40.7142 long2:-74.0064];
+    [currentMessage.lineArray addObject:temp];      //NOT WORKING!!!!!!!!!
     //[self.mapView addOverlay:temp];
     
 
