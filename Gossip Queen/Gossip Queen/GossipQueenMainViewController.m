@@ -23,6 +23,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
     NSLog(@"Main");
     
+    idArray = [[NSMutableArray alloc] init];    //why do I always forget to initialize arrays....
+    
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
@@ -44,27 +46,41 @@
     
     //LONG RUNNING PARSE OPERATION BEING RUN ON A MAIN THREAD BUT IT DISPLAYS!!!! THIS NEEDS TO CHANGE
     
+    for (NSString* objid in idArray) {
+        NSLog(objid);
+    }
+    
     PFQuery *query = [PFQuery queryWithClassName:@"Message"];
+    [query whereKey:@"requests" lessThan:[NSNumber numberWithInt:5]];
     
-    currentParseMessage = [query getFirstObject];
+    [query whereKey:@"objectId" notContainedIn:idArray];
     
+    if ((currentParseMessage = [query getFirstObject])) {
+        
+        [idArray addObject:currentParseMessage.objectId];
+        [currentParseMessage incrementKey:@"requests"];
+        [currentParseMessage saveInBackground];
+        self.receiveField.text = [currentParseMessage objectForKey:@"text"];
+        
+    } else {
+        
+        currentParseMessage = nil;
+        NSLog(@"NO AVAILABLE MESSAGES");
+        self.receiveField.text = @"There is no more gossip to be had...";
+
+    }
     
     //this version is much better and i will use it when I understand blocks better
     /*[query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-        if (!object) {
-            NSLog(@"The getFirstObject request failed.");
-        } else {
-            currentParseMessage = object;
-            NSLog(@"Successfully retrieved the object.");
-        }
-    }];*/
-    
-    self.receiveField.text = [currentParseMessage objectForKey:@"text"];
+     if (!object) {
+     NSLog(@"The getFirstObject request failed.");
+     } else {
+     currentParseMessage = object;
+     NSLog(@"Successfully retrieved the object.");
+     }
+     }];*/
     
 }
-
-
-
 
 #pragma mark - Button methods
 
@@ -79,6 +95,8 @@
     [message setObject:text forKey:@"text"];
     [message setObject:[NSNumber numberWithDouble:latitude] forKey:@"lastLat"];
     [message setObject:[NSNumber numberWithDouble:longitude] forKey:@"lastLong"];
+    
+    [message setObject:[NSNumber numberWithInt:0] forKey:@"requests"]; //number of times the message has been requested
 
     [message setObject:[NSNumber numberWithInt:0] forKey:@"likes"]; //number of times the message has been liked
     

@@ -15,6 +15,7 @@
     double latitude;
     double longitude;
     PFObject *currentParseMessage;
+    NSMutableArray *idArray;    //for keeping track of objects that we have already seen, to avoid repeats
 }
 
 @property (weak, nonatomic) IBOutlet UITextView *sendField;
