@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface GossipQueenMainViewController : UIViewController {
+@interface GossipQueenMainViewController : UIViewController <UITextViewDelegate> {
     CLLocationManager *locationManager;
     double latitude;
     double longitude;
@@ -22,7 +22,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *receiveField;
 
 - (IBAction)sendMessage:(id)sender;
-- (IBAction)insertLink:(id)sender;
 - (IBAction)like:(id)sender;
 - (IBAction)dislike:(id)sender;
 - (IBAction)showInMap:(id)sender;

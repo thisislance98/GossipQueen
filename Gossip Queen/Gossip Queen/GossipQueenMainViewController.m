@@ -55,12 +55,17 @@
     
     [query whereKey:@"objectId" notContainedIn:idArray];
     
-    if ((currentParseMessage = [query getFirstObject])) {
+    if ((currentParseMessage = [query getFirstObject])) {              //This needs to be changed to using blocks, would be much better
         
         [idArray addObject:currentParseMessage.objectId];
         [currentParseMessage incrementKey:@"requests"];
         [currentParseMessage saveInBackground];
+        
+        
         self.receiveField.text = [currentParseMessage objectForKey:@"text"];
+        
+        //self.receiveField.text = [[[currentParseMessage objectForKey:@"responses"] objectAtIndex:0] objectAtIndex:0];
+        
         
     } else {
         
@@ -93,12 +98,26 @@
     PFObject *message = [PFObject objectWithClassName:@"Message"];  //Using class name "Message"
     
     [message setObject:text forKey:@"text"];
-    [message setObject:[NSNumber numberWithDouble:latitude] forKey:@"lastLat"];
+    
+    [message setObject:[NSNumber numberWithDouble:latitude] forKey:@"lastLat"];   
     [message setObject:[NSNumber numberWithDouble:longitude] forKey:@"lastLong"];
     
     [message setObject:[NSNumber numberWithInt:0] forKey:@"requests"]; //number of times the message has been requested
 
-    [message setObject:[NSNumber numberWithInt:0] forKey:@"likes"]; //number of times the message has been liked
+    [message setObject:[NSNumber numberWithInt:0] forKey:@"likes"];
+    [message setObject:[NSNumber numberWithInt:0] forKey:@"dislikes"];
+    
+    
+    //#####################################################################
+    //creating the responses
+    
+    NSMutableArray *responses = [[NSMutableArray alloc] init];
+    
+    NSArray *details = [[NSArray alloc] initWithObjects: @"John Doe", @"Viva la revolucion", nil];
+    
+    [responses addObject:details];
+    
+    [message setObject:responses forKey:@"responses"];
     
     
     
@@ -113,21 +132,23 @@
     
 }
 
-- (IBAction)insertLink:(id)sender {
-    NSLog(@"insertLink");
-}
-
 - (IBAction)like:(id)sender {
     
-    [currentParseMessage incrementKey:@"like"];
+    [currentParseMessage incrementKey:@"likes"];
     [currentParseMessage saveInBackground];
     
-    [self updateReceiveField]; //THIS NEEDS TO CYCLE THROUGH MESSAGES, WHICH IT DOES NOT CURRENTLY DO
+    [self updateReceiveField]; //displays another message
     
     NSLog(@"like");
 }
 
 - (IBAction)dislike:(id)sender {
+    
+    [currentParseMessage incrementKey:@"dislikes"];
+    [currentParseMessage saveInBackground];
+    
+    [self updateReceiveField]; //displays another message
+    
     NSLog(@"dislike");
 }
 
@@ -148,6 +169,16 @@
     longitude = newLocation.coordinate.longitude;
 }
 
+#pragma mark - UITextView delegate
 
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    
+    return YES;
+}
 
 @end

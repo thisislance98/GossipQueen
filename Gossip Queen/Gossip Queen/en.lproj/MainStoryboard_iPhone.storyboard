@@ -28,6 +28,7 @@
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZU-Pn-CkW">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="122" id="eLU-en-YbW"/>
+                                    <constraint firstAttribute="width" constant="288" id="kyX-v4-eGM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
@@ -69,7 +70,7 @@
                             </button>
                             <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gO6-gw-LKw">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="72" id="wwp-c2-RcB"/>
+                                    <constraint firstAttribute="width" constant="203" id="aHJ-ru-dfm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Send">
@@ -91,7 +92,7 @@
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="2" id="NfE-EU-tDx"/>
                                 </connections>
@@ -104,24 +105,8 @@
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
-                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dC9-zc-PHz">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="101" id="19T-Kv-QiP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Insert Link">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="insertLink:" destination="2" eventType="touchUpInside" id="d0x-zf-G7p"/>
-                                </connections>
-                            </button>
                             <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDq-Nn-AbX">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="FON-ws-GO3"/>
@@ -158,29 +143,26 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="VCt-Ic-noY" firstAttribute="leading" secondItem="JZU-Pn-CkW" secondAttribute="leading" type="default" id="0Ie-FH-RTb"/>
                             <constraint firstItem="5Mc-mz-eqp" firstAttribute="centerX" secondItem="JZU-Pn-CkW" secondAttribute="centerX" type="default" id="0LU-vx-ZgD"/>
                             <constraint firstAttribute="bottom" secondItem="z8S-zX-L96" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="0yr-eE-hkU"/>
                             <constraint firstItem="z8S-zX-L96" firstAttribute="centerX" secondItem="UDq-Nn-AbX" secondAttribute="centerX" type="default" id="5xd-cB-pw6"/>
-                            <constraint firstItem="z8S-zX-L96" firstAttribute="centerX" secondItem="5Mc-mz-eqp" secondAttribute="centerX" type="default" id="AmH-jB-P4P"/>
                             <constraint firstItem="SdW-4Z-k3c" firstAttribute="top" secondItem="16" secondAttribute="top" constant="20" symbolic="YES" type="default" id="FLh-GO-siX"/>
                             <constraint firstItem="0NE-3M-ueM" firstAttribute="baseline" secondItem="UDq-Nn-AbX" secondAttribute="baseline" type="default" id="HpE-le-Cvq"/>
-                            <constraint firstItem="dC9-zc-PHz" firstAttribute="baseline" secondItem="gO6-gw-LKw" secondAttribute="baseline" type="default" id="OXZ-Pu-ARs"/>
+                            <constraint firstItem="Qxq-JN-aOK" firstAttribute="top" secondItem="16" secondAttribute="top" constant="38" id="KAs-C3-Wq4"/>
                             <constraint firstItem="JZU-Pn-CkW" firstAttribute="centerY" secondItem="5Mc-mz-eqp" secondAttribute="centerY" type="default" id="Olc-Pn-XPo"/>
-                            <constraint firstAttribute="trailing" secondItem="VCt-Ic-noY" secondAttribute="trailing" constant="25" id="SMG-lW-Jbt"/>
                             <constraint firstItem="z8S-zX-L96" firstAttribute="top" secondItem="UDq-Nn-AbX" secondAttribute="top" type="default" id="TV3-0a-WIB"/>
                             <constraint firstItem="Qxq-JN-aOK" firstAttribute="centerX" secondItem="SdW-4Z-k3c" secondAttribute="centerX" type="default" id="Uzb-NH-f8q"/>
                             <constraint firstAttribute="trailing" secondItem="SdW-4Z-k3c" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ZP9-pF-Syf"/>
                             <constraint firstItem="VCt-Ic-noY" firstAttribute="baseline" secondItem="UDq-Nn-AbX" secondAttribute="baseline" type="default" id="aEZ-AP-7eI"/>
                             <constraint firstAttribute="bottom" secondItem="UDq-Nn-AbX" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="c75-mR-CcJ"/>
                             <constraint firstItem="SdW-4Z-k3c" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="j5K-3Q-Nog"/>
+                            <constraint firstItem="UDq-Nn-AbX" firstAttribute="centerX" secondItem="5Mc-mz-eqp" secondAttribute="centerX" type="default" id="j9I-Jd-MXw"/>
                             <constraint firstAttribute="bottom" secondItem="JZU-Pn-CkW" secondAttribute="bottom" constant="67" id="l50-nd-1fT"/>
-                            <constraint firstItem="gO6-gw-LKw" firstAttribute="leading" secondItem="Qxq-JN-aOK" secondAttribute="leading" type="default" id="lpd-te-qMd"/>
                             <constraint firstAttribute="trailing" secondItem="JZU-Pn-CkW" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="nKD-2l-W85"/>
-                            <constraint firstItem="dC9-zc-PHz" firstAttribute="trailing" secondItem="Qxq-JN-aOK" secondAttribute="trailing" type="default" id="pLY-FA-DQp"/>
-                            <constraint firstItem="0NE-3M-ueM" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rio-9B-3GY"/>
                             <constraint firstItem="gO6-gw-LKw" firstAttribute="top" secondItem="SdW-4Z-k3c" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="uuu-i2-vx8"/>
-                            <constraint firstItem="z8S-zX-L96" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="103" id="wfl-Bp-eMX"/>
-                            <constraint firstItem="Qxq-JN-aOK" firstAttribute="top" secondItem="16" secondAttribute="top" constant="38" id="xYS-re-ZvP"/>
+                            <constraint firstAttribute="trailing" secondItem="0NE-3M-ueM" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="yrD-Be-Kwl"/>
+                            <constraint firstItem="gO6-gw-LKw" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="57" id="zGZ-PH-Cdi"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" id="7"/>
@@ -747,6 +729,46 @@
             <point key="canvasLocation" x="-427" y="-1711"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="GossipQueenDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mainField" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="GossipQueenFriendDetailController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenFriendDetailController.h"/>
+        </class>
+        <class className="GossipQueenFriendsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenFriendsViewController.h"/>
+        </class>
+        <class className="GossipQueenHistoryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenHistoryViewController.h"/>
+        </class>
+        <class className="GossipQueenInterestsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenInterestsViewController.h"/>
+        </class>
+        <class className="GossipQueenMainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenMainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dislike:"/>
+                <relationship kind="action" name="like:"/>
+                <relationship kind="action" name="sendMessage:"/>
+                <relationship kind="action" name="showInMap:"/>
+                <relationship kind="outlet" name="receiveField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="sendField" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="GossipQueenMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GossipQueenMapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
